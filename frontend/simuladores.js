@@ -187,6 +187,66 @@ const Sim = (() => {
     });
   }
 
+  /* ---------- simulador 4: descuento y duración ---------- */
+
+  function descuento(caja, cfg) {
+    const p = cfg.parametros;
+    const controles = [
+      { k: 'tasa', lbl: 'Tasa de descuento', min: 2, max: 15, paso: 0.25, val: p.tasa, suf: '%' },
+      { k: 'crecimiento', lbl: 'Crecimiento del flujo', min: 0, max: 12, paso: 0.25, val: p.crecimiento, suf: '%' },
+      { k: 'anios', lbl: 'Años proyectados', min: 5, max: 40, paso: 1, val: p.anios, suf: '' }
+    ];
+    montar(caja, cfg, controles, (v, ctx3) => {
+      const r = v.tasa / 100, g = Math.min(v.crecimiento / 100, r - 0.0025);
+      const n = v.anios, C = p.flujo;
+
+      const vps = [];
+      let explicito = 0, primeros5 = 0;
+      for (let i = 1; i <= n; i++) {
+        const vp = C * Math.pow(1 + g, i - 1) / Math.pow(1 + r, i);
+        vps.push(vp); explicito += vp;
+        if (i <= 5) primeros5 += vp;
+      }
+      // valor terminal: perpetuidad de Gordon descontada al año n
+      const flujoN1 = C * Math.pow(1 + g, n);
+      const terminal = (flujoN1 / (r - g)) / Math.pow(1 + r, n);
+      const total = explicito + terminal;
+
+      const { ctx, w, h } = ctx3;
+      const m = { l: 52, r: 12, t: 12, b: 26 };
+      const max = Math.max(...vps) * 1.15;
+
+      ejes(ctx, w, h, m,
+        [[0, '0'], [0.5, (max / 2).toFixed(1)], [1, max.toFixed(1)]],
+        [[0, 'año 1'], [1, 'año ' + n]]);
+
+      // barras del valor presente de cada flujo
+      const ancho = w - m.l - m.r, alto = h - m.t - m.b;
+      const paso = ancho / n;
+      vps.forEach((vp, i) => {
+        const x = m.l + paso * i;
+        const altura = (vp / max) * alto;
+        ctx.fillStyle = i < 5 ? COLOR.acento : COLOR.azul;
+        ctx.globalAlpha = i < 5 ? 1 : 0.7;
+        ctx.fillRect(x + paso * 0.12, m.t + alto - altura,
+          Math.max(1, paso * 0.76), altura);
+      });
+      ctx.globalAlpha = 1;
+
+      const pctTerminal = terminal / total * 100;
+      const pct5 = primeros5 / total * 100;
+
+      return [
+        ['Valor total', total.toFixed(1), COLOR.acento],
+        ['En los 5 primeros años', pct5.toFixed(1) + '%', COLOR.acento],
+        ['En el valor terminal', pctTerminal.toFixed(1) + '%',
+          pctTerminal > 60 ? COLOR.rojo : COLOR.azul],
+        ['Múltiplo sobre flujo', (total / C).toFixed(1) + '×',
+          total / C > 40 ? COLOR.rojo : COLOR.verde]
+      ];
+    });
+  }
+
   /* ---------- montaje común ---------- */
 
   function montar(caja, cfg, controles, calcular) {
@@ -233,7 +293,7 @@ const Sim = (() => {
 
   /* ---------- API ---------- */
 
-  const registro = { ergodico, compuesto, drag };
+  const registro = { ergodico, compuesto, drag, descuento };
 
   function renderizar(raiz) {
     raiz.querySelectorAll('code').forEach(code => {

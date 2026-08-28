@@ -10,10 +10,19 @@ Duración: 3 meses. 5 sesiones semanales de 1 hora. 60 sesiones.
 
 ## Reglas de trabajo en este repo
 
-- **Densidad antes que brevedad.** Cada sesión de teoría son 3.500-4.500
-  palabras de prosa densa. Si una sesión cabe en viñetas, está mal escrita.
-  El usuario ha pagado el equivalente a un curso caro en tiempo: se nota o no
-  vale nada.
+- **Densidad antes que brevedad.** Cada sesión de teoría son **7.000-9.000
+  palabras** de prosa densa: entre 35 y 45 minutos de lectura real. Si una
+  sesión cabe en viñetas, está mal escrita. El usuario ha pagado el equivalente
+  a un curso caro en tiempo: se nota o no vale nada.
+- **Cada sesión lleva sus tres elementos.** No son adorno: rompen el muro de
+  texto y fijan lo importante.
+  - ````clave` — al menos 8 por sesión. Primera línea el título, el resto
+    el cuerpo. Es lo que el lector debe retener si solo retiene una cosa.
+  - ````anecdota` — entre 3 y 6 por sesión. Historia real, verificable, con
+    su lección analítica explícita. Nunca decorativa.
+  - ````grafico` — entre 4 y 6 por sesión. `tipo: barras` o `tipo: lineas`.
+    Los datos deben ser reales o estar marcados como ilustración conceptual
+    en la `nota`.
 - **Nunca dar consejo de inversión personalizado.** Se enseñan marcos, no
   recomendaciones. "Así se valora una empresa", nunca "compra esta".
 - **Honestidad sobre lo que no funciona.** Cada herramienta se enseña con su

@@ -91,6 +91,7 @@ async function abrirSesion(id) {
 
   const cuerpo = $('#cuerpo');
   cuerpo.innerHTML = marked.parse(datos.cuerpo || '');
+  Comp.renderizar(cuerpo);
   Sim.renderizar(cuerpo);
 
   $('#ir-test').addEventListener('click', () => abrirTest(meta.examen_id, id));
