@@ -1,0 +1,316 @@
+{
+  "id": "examen-s1",
+  "semana": 1,
+  "tipo": "semanal",
+  "titulo": "Examen semanal 1 · De dónde sale el valor",
+  "corte": 0.8,
+  "n_preguntas": 40,
+  "pool_heredado": ["test-01", "test-02", "test-03", "test-04"],
+  "nota": "El examen extrae 40 preguntas: las integradoras de este archivo más una selección del pool de los tests diarios. En un reintento se priorizan las preguntas no vistas en el intento anterior.",
+  "casos_peso": 0.25,
+  "preguntas": [
+    {
+      "id": "s1-q1",
+      "concepto": "integración 01+02",
+      "enunciado": "Una empresa sin deuda, con márgenes estables y cuyo valor está mayoritariamente en flujos de los próximos 5 años, cae un 4% el día que el bono a 10 años sube 40 puntos básicos. Otra empresa, también sin deuda pero prerrevenue con la tesis puesta en 2040, cae un 19%. ¿Cuál es la explicación completa?",
+      "opciones": ["La segunda tiene peor negocio", "La segunda tiene mayor duración de equity: sus flujos están más lejos y son más sensibles al descuento", "La primera está infravalorada", "El mercado castiga a las empresas sin beneficios por sentimiento"],
+      "correcta": 1,
+      "explicacion": "Ningún flujo ha cambiado en ninguna de las dos. Ha cambiado el denominador, y su efecto es proporcional a la lejanía del dinero. El sentimiento puede amplificarlo, pero el mecanismo es aritmético y calculable.",
+      "distractores": {
+        "0": "Nada en el enunciado dice que el negocio sea peor; dice que su dinero llega más tarde.",
+        "2": "No hay información de valoración en el enunciado.",
+        "3": "Describe el efecto observable atribuyéndolo a psicología cuando hay una causa mecánica suficiente."
+      }
+    },
+    {
+      "id": "s1-q2",
+      "concepto": "integración 01+03",
+      "enunciado": "El apalancamiento operativo amplifica el beneficio del accionista en ambas direcciones. ¿Qué peligro concreto crea eso durante una expansión económica prolongada?",
+      "opciones": ["Que los beneficios crezcan demasiado deprisa para la contabilidad", "Que los negocios más frágiles parezcan los mejor gestionados, porque su amplificación al alza se confunde con calidad operativa", "Que las empresas contraten en exceso", "Ninguno: en expansión el apalancamiento operativo es solo positivo"],
+      "correcta": 1,
+      "explicacion": "El mismo mecanismo que convierte −10% de ingresos en −80% de beneficio convierte +10% en +80%. Distinguir margen sostenible de amplificación cíclica es una de las tareas más difíciles del análisis fundamental.",
+      "distractores": {
+        "0": "No es un problema contable.",
+        "2": "Consecuencia posible pero no el peligro analítico.",
+        "3": "Es exactamente la conclusión errónea que el ciclo induce."
+      }
+    },
+    {
+      "id": "s1-q3",
+      "concepto": "integración 02+04",
+      "enunciado": "Una comisión del 1,5% anual y una tasa de descuento son, matemáticamente, el mismo tipo de mecanismo. ¿Por qué?",
+      "opciones": ["Porque ambas son porcentajes", "Porque ambas se componen exponencialmente a lo largo del tiempo, una restando valor futuro y otra descontándolo al presente", "Porque ambas las fija el mercado", "No lo son: la comisión es un coste y la tasa una convención"],
+      "correcta": 1,
+      "explicacion": "El (1+r)ⁿ actúa igual en ambos casos. Por eso un 1,5% de comisión se lleva un 38% del beneficio a 30 años: la composición no distingue si el porcentaje trabaja a tu favor o en tu contra.",
+      "distractores": {
+        "0": "Cierto y trivial: no identifica el mecanismo.",
+        "2": "La comisión la fija el gestor.",
+        "3": "La distinción económica es real, pero la pregunta es sobre la matemática, que es idéntica."
+      }
+    },
+    {
+      "id": "s1-q4",
+      "concepto": "integración 03+04",
+      "enunciado": "Ayer viste que la volatilidad no es riesgo. Hoy has visto que la volatilidad reduce el retorno compuesto vía σ²/2. ¿Se contradicen?",
+      "opciones": ["Sí, una de las dos afirmaciones es falsa", "No: la volatilidad no mide bien la probabilidad de pérdida permanente, pero sí erosiona mecánicamente el retorno compuesto", "No, porque el lastre solo aplica a activos apalancados", "Sí, y la resolución es que solo importa la volatilidad a la baja"],
+      "correcta": 1,
+      "explicacion": "Son afirmaciones sobre cosas distintas: una sobre qué mide la volatilidad como proxy de riesgo, otra sobre su efecto aritmético en la composición. Ambas son ciertas simultáneamente.",
+      "distractores": {
+        "0": "No hay contradicción; hay dos preguntas distintas.",
+        "2": "El lastre aplica a cualquier serie de retornos compuestos.",
+        "3": "Sortino es una mejora parcial, no la resolución de esta aparente paradoja."
+      }
+    },
+    {
+      "id": "s1-q5",
+      "concepto": "DCF inverso",
+      "enunciado": "Una acción cotiza a 60 veces su flujo de caja. Con una tasa de descuento del 9%, ¿qué crecimiento a perpetuidad está descontando implícitamente el precio (modelo de Gordon)?",
+      "opciones": ["1,5%", "Aproximadamente 7,3%", "9%", "No se puede saber"],
+      "correcta": 1,
+      "explicacion": "Si P/C = 1/(r−g) = 60, entonces r−g = 1/60 = 0,0167, luego g = 0,09 − 0,0167 = 7,3%. Ese es el DCF inverso: en lugar de darte un valor, te dice qué tendría que ser cierto para que el precio actual tenga sentido. Y un 7,3% a perpetuidad supera el crecimiento nominal de la economía.",
+      "distractores": {
+        "0": "Confunde el múltiplo con la tasa.",
+        "2": "Sería el caso de múltiplo infinito.",
+        "3": "Sí se puede: es precisamente la utilidad del modelo despejado."
+      }
+    },
+    {
+      "id": "s1-q6",
+      "concepto": "fuentes de retorno agregadas",
+      "enunciado": "A nivel agregado del mercado, ¿por qué el componente de expansión de múltiplo no puede sostener el retorno a largo plazo?",
+      "opciones": ["Porque las autoridades lo impiden", "Porque los múltiplos son estacionarios: pueden multiplicarse por dos o por cuatro, pero no indefinidamente, mientras los beneficios sí pueden componer durante décadas", "Porque las recompras lo compensan", "Porque los dividendos son más importantes"],
+      "correcta": 1,
+      "explicacion": "Un PER puede ir de 15 a 30 y de 30 a 60, pero no a 6.000. Está acotado por aritmética. Los beneficios no tienen ese techo. Por eso a cien años vista la contribución del múltiplo es casi ruido y a un año puede ser casi todo.",
+      "distractores": {
+        "0": "No hay ninguna autoridad que fije múltiplos.",
+        "2": "Las recompras son parte del componente de caja devuelta, no un contrapeso al múltiplo.",
+        "3": "Los dividendos importan mucho, pero no es la razón del techo del múltiplo."
+      }
+    },
+    {
+      "id": "s1-q7",
+      "concepto": "duración de cartera",
+      "enunciado": "Un inversor tiene cinco posiciones: tres tecnológicas de crecimiento sin beneficios, bonos del Tesoro a 30 años y bitcoin. ¿Está diversificado?",
+      "opciones": ["Sí: cinco posiciones en tres clases de activo distintas", "No: pese a los nombres distintos, todo son activos de larga duración, es decir una apuesta apalancada al tipo de interés", "Sí, porque bitcoin está descorrelacionado", "Depende del peso de cada posición"],
+      "correcta": 1,
+      "explicacion": "La diversificación se mide por exposición a factores de riesgo, no por número de nombres. Aquí el factor dominante es el mismo en las cinco posiciones. Este es el tema de la sesión 47.",
+      "distractores": {
+        "0": "Contar posiciones y clases de activo es exactamente la definición floja de diversificación que la sesión desmonta.",
+        "2": "Su correlación con la renta variable de crecimiento ha sido alta en los episodios que importan, y en cualquier caso comparte el factor duración.",
+        "3": "El peso afecta a la magnitud, no al hecho de que el factor de riesgo sea único."
+      }
+    },
+    {
+      "id": "s1-q8",
+      "concepto": "incertidumbre y sizing",
+      "enunciado": "¿Cuál es la implicación práctica de la distinción de Knight para el tamaño de tus posiciones?",
+      "opciones": ["Ninguna: es una distinción filosófica", "Que como tu estimación de probabilidad tiene un error que no puedes cuantificar, el tamaño debe incorporar margen sobre lo que un cálculo de EV recomendaría", "Que debes evitar los activos volátiles", "Que hay que diversificar en más nombres"],
+      "correcta": 1,
+      "explicacion": "Si conocieras la distribución, el sizing óptimo sería calculable. Como no la conoces, cualquier óptimo calculado está sobreestimado. Es una de las razones del medio-Kelly de la sesión 46.",
+      "distractores": {
+        "0": "Tiene consecuencia operativa directa sobre el tamaño.",
+        "2": "La volatilidad no es la variable relevante aquí.",
+        "3": "Más nombres no reduce la incertidumbre sobre la distribución si comparten factor."
+      }
+    },
+    {
+      "id": "s1-q9",
+      "concepto": "TINA",
+      "enunciado": "Durante 2020-2021 el tipo real a 10 años estuvo en negativo. ¿Qué explica eso sobre las valoraciones de aquel periodo?",
+      "opciones": ["Nada: fueron valoraciones puramente irracionales", "Que mantener efectivo o bonos garantizaba perder poder adquisitivo, lo que empujaba el capital hacia el riesgo, no porque el riesgo mejorara sino porque la alternativa era una pérdida segura", "Que la inflación no existía", "Que los bancos centrales compraban acciones"],
+      "correcta": 1,
+      "explicacion": "Explica buena parte de aquellas valoraciones mucho mejor que un relato sobre la locura colectiva. Y explica simétricamente la recolocación de 2022, cuando el tipo real volvió a positivo.",
+      "distractores": {
+        "0": "Atribuir a irracionalidad lo que tiene un mecanismo suficiente es renunciar al análisis.",
+        "2": "La inflación existía; el punto es que superaba al tipo nominal.",
+        "3": "La Fed no compró renta variable."
+      }
+    },
+    {
+      "id": "s1-q10",
+      "concepto": "límite del martillo de tipos",
+      "enunciado": "¿En qué caso sería un error atribuir una caída del mercado a los tipos de interés?",
+      "opciones": ["Nunca: los tipos explican todo", "Cuando la caída viene acompañada de revisiones a la baja de beneficios esperados, es decir, cuando el numerador se ha deteriorado", "Cuando los tipos suben poco", "Cuando la caída es superior al 20%"],
+      "correcta": 1,
+      "explicacion": "El martillo de la sesión 02 es potente y crea el riesgo de ver clavos en todas partes. La descomposición honesta suele ser un reparto entre numerador y denominador, no un culpable único.",
+      "distractores": {
+        "0": "Es exactamente el exceso que la sesión advierte.",
+        "2": "La magnitud del movimiento de tipos no determina si la causa es esa.",
+        "3": "El tamaño de la caída no informa sobre su causa."
+      }
+    },
+    {
+      "id": "s1-q11",
+      "concepto": "cajones y herramientas",
+      "enunciado": "¿Cuál es el error caro al aplicar un marco de cajón 3 (activo productivo) a un activo del cajón 2?",
+      "opciones": ["Que la rentabilidad será menor", "Que crees haber calculado un valor intrínseco cuando lo que has hecho es formalizar una expectativa sobre el comportamiento futuro de otras personas", "Que pagarás más impuestos", "Que la volatilidad será mayor"],
+      "correcta": 1,
+      "explicacion": "Sin flujo no hay descuento posible. El modelo produce un número y ese número no es un valor intrínseco: es tu creencia sobre la adopción o la psicología futura, escrita en notación financiera.",
+      "distractores": {
+        "0": "No hay ninguna implicación sobre rentabilidad.",
+        "2": "Irrelevante para la clasificación.",
+        "3": "Puede ser cierto empíricamente y no es la consecuencia analítica."
+      }
+    },
+    {
+      "id": "s1-q12",
+      "concepto": "orden de la ruina",
+      "enunciado": "Una estrategia tiene 99% de probabilidad de rendir un 40% anual y 1% de arruinarte, cada año. ¿Cómo se evalúa?",
+      "opciones": ["Excelente: el valor esperado es muy alto", "Como una estrategia que termina en cero con probabilidad creciente hacia 1 conforme se repite, porque la ruina es un estado absorbente", "Buena si diversificas", "Depende de tu tolerancia al riesgo"],
+      "correcta": 1,
+      "explicacion": "La probabilidad de sobrevivir n años es 0,99ⁿ. A 30 años es un 74%; a 100 años, un 37%. La ruina no admite compensación con retorno esperado porque no hay retorno desde ella.",
+      "distractores": {
+        "0": "El EV es alto y es irrelevante frente a un estado absorbente. Ese es el punto de la sesión 03.",
+        "2": "Diversificar no elimina un riesgo de ruina si es sistémico a la estrategia.",
+        "3": "La tolerancia al riesgo no cambia la aritmética de un estado absorbente."
+      }
+    },
+    {
+      "id": "s1-q13",
+      "concepto": "beneficio vs caja",
+      "enunciado": "¿Por qué la definición de acción habla de flujo de caja y no de beneficio?",
+      "opciones": ["Porque el beneficio se publica más tarde", "Porque la contabilidad es una opinión razonada sobre cuándo asignar cada partida, mientras la caja es un hecho verificable", "Porque el beneficio incluye impuestos", "Porque el flujo de caja siempre es mayor"],
+      "correcta": 1,
+      "explicacion": "La distancia entre ambos es donde ocurren la mayoría de los fraudes y casi todas las sorpresas desagradables. Es el objeto de la semana 5 entera.",
+      "distractores": {
+        "0": "Cuestión de calendario, no de naturaleza.",
+        "2": "El flujo de caja también los incluye.",
+        "3": "Puede ser mayor o menor según el momento del ciclo de inversión."
+      }
+    },
+    {
+      "id": "s1-q14",
+      "concepto": "Le Maire",
+      "enunciado": "El primer episodio documentado de venta en corto coordinada (Isaac Le Maire, 1609) produjo en 1610 la primera regulación prohibiéndola. ¿Qué ilustra?",
+      "opciones": ["Que la venta en corto siempre ha sido ilegal", "Que las estructuras del mercado y los debates regulatorios que genera aparecieron casi simultáneamente con el propio mercado, y siguen abiertos", "Que los reguladores del XVII eran más eficaces", "Que Le Maire inventó los derivados"],
+      "correcta": 1,
+      "explicacion": "Ocho años después de la primera acción ya había short selling coordinado y prohibición de short selling. El debate no ha avanzado tanto como parece.",
+      "distractores": {
+        "0": "Ha sido legal en la mayoría de jurisdicciones y periodos, con prohibiciones puntuales.",
+        "2": "La prohibición fue en buena medida ineficaz.",
+        "3": "Los derivados sobre acciones de la VOC aparecieron en el mismo periodo, pero no es lo que ilustra el episodio."
+      }
+    },
+    {
+      "id": "s1-q15",
+      "concepto": "convexidad de la duración",
+      "enunciado": "La aproximación por duración estima el efecto de un cambio de tipos. ¿Cuándo falla y en qué dirección?",
+      "opciones": ["Nunca falla", "Falla en movimientos grandes de tipos, y su error tiene siempre el mismo signo por la curvatura de la relación precio-tipo", "Falla en movimientos pequeños", "Falla solo en acciones, no en bonos"],
+      "correcta": 1,
+      "explicacion": "Duración es una aproximación de primer orden, es decir lineal. La relación real es curva. Para 25 puntos básicos la estimación es excelente; para 300 se desvía de forma significativa y sistemática. Esa curvatura es la convexidad de la sesión 31.",
+      "distractores": {
+        "0": "Toda linealización falla fuera de su entorno.",
+        "2": "Es exactamente donde mejor funciona.",
+        "3": "Es un concepto general de valor presente, aplicable a ambos."
+      }
+    },
+    {
+      "id": "s1-q16",
+      "concepto": "residuo generalizado",
+      "enunciado": "El curso afirma que 'estás mirando un residuo, y los residuos amplifican' reaparecerá varias veces. ¿En cuál de estos casos NO aplica ese mismo mecanismo?",
+      "opciones": ["El beneficio del accionista frente a los ingresos", "El precio de una opción frente al precio del subyacente", "El beneficio tras intereses frente al beneficio operativo", "El precio de un bono del Tesoro frente a su cupón"],
+      "correcta": 3,
+      "explicacion": "El cupón de un bono es un flujo contractual fijo, no un residuo. Su precio varía con los tipos, pero por descuento, no por amplificación de una resta. Los otros tres son residuos y los tres amplifican.",
+      "distractores": {
+        "0": "Es el caso canónico: apalancamiento operativo.",
+        "1": "La opción es un residuo respecto al strike: por eso su porcentaje se mueve mucho más que el del subyacente.",
+        "2": "Apalancamiento financiero: mismo mecanismo, otra capa."
+      }
+    },
+    {
+      "id": "s1-q17",
+      "concepto": "diagnóstico de un múltiplo alto",
+      "enunciado": "¿Qué afirmación sobre un PER de 50 es correcta?",
+      "opciones": ["Es irracional por definición", "Puede ser perfectamente coherente con tipos bajos y crecimiento alto; que sea coherente no significa que sea correcto, significa que apuestas fuerte a dos números que no controlas", "Indica que la empresa es de alta calidad", "Solo tiene sentido en tecnología"],
+      "correcta": 1,
+      "explicacion": "Con Gordon, r=8% y g=6% da un múltiplo de 50 sin ninguna irracionalidad. El problema no es la coherencia del número, es la fragilidad de los supuestos que lo sostienen.",
+      "distractores": {
+        "0": "Descartar por el múltiplo sin examinar los supuestos es un atajo que hace perder buenas empresas y no evita las malas.",
+        "2": "El múltiplo refleja expectativas, no calidad demostrada.",
+        "3": "El sector es irrelevante para la aritmética."
+      }
+    },
+    {
+      "id": "s1-q18",
+      "concepto": "prioridad de conceptos",
+      "enunciado": "Según la jerarquía de la sesión 03, ordena de menor a mayor gravedad: variabilidad, pérdida permanente, ruina.",
+      "opciones": ["Ruina, pérdida permanente, variabilidad", "Variabilidad, pérdida permanente, ruina", "Pérdida permanente, variabilidad, ruina", "Los tres son igual de graves"],
+      "correcta": 1,
+      "explicacion": "La variabilidad es una molestia, la pérdida permanente es un coste, la ruina es un estado absorbente. La industria mide obsesivamente la primera.",
+      "distractores": {
+        "0": "Invertido.",
+        "2": "La variabilidad no es más grave que la pérdida permanente.",
+        "3": "La diferencia entre ellos es el contenido entero de la sesión."
+      }
+    },
+    {
+      "id": "s1-q19",
+      "concepto": "por qué existe el mercado",
+      "enunciado": "De las cuatro funciones del mercado, ¿cuál es el fundamento del mercado de opciones que verás en la semana 4?",
+      "opciones": ["Asignación de capital", "Descubrimiento de precio", "Transferencia de riesgo", "Provisión de liquidez"],
+      "correcta": 2,
+      "explicacion": "Una opción es un contrato mediante el cual quien no quiere un riesgo se lo traspasa a quien sí lo quiere, a cambio de un precio: la prima. Es la función 4 en estado puro.",
+      "distractores": {
+        "0": "Las opciones no canalizan ahorro hacia la empresa.",
+        "1": "El mercado de opciones aporta información de precio, pero no es su razón de ser.",
+        "3": "Aportan liquidez indirectamente; no es la función fundacional."
+      }
+    },
+    {
+      "id": "s1-q20",
+      "concepto": "límite honesto del curso",
+      "enunciado": "El curso admite que entender el mecanismo de los tipos no permite anticipar los tipos. ¿Por qué importa esa distinción?",
+      "opciones": ["Porque hace el curso menos útil", "Porque evita construir una tesis macro direccional sobre un mecanismo que solo explica efectos, no causas futuras", "Porque los bancos centrales publican sus proyecciones", "Porque los tipos son impredecibles a corto pero no a largo"],
+      "correcta": 1,
+      "explicacion": "El mecanismo te dice qué pasa SI los tipos se mueven. No te dice si se moverán. Confundir ambas cosas es la vía rápida a una apuesta macro que no puedes sostener. Ni siquiera los bancos centrales aciertan sus propias proyecciones publicadas.",
+      "distractores": {
+        "0": "Lo hace más útil: delimita dónde termina la herramienta.",
+        "2": "Las publican y fallan sistemáticamente.",
+        "3": "El largo plazo no es más predecible en esta variable."
+      }
+    }
+  ],
+  "casos": [
+    {
+      "id": "s1-caso1",
+      "titulo": "El informe del analista",
+      "enunciado": "Un analista publica una valoración de una empresa de software. Usa un DCF a 10 años, tasa de descuento del 8%, crecimiento a perpetuidad del 6,5%, y concluye un precio objetivo de 340 € frente a los 210 € actuales. La tesis se titula 'infravalorada un 62%'. Detecta y explica los tres problemas metodológicos más graves, y di qué le pedirías al analista para poder evaluar su trabajo.",
+      "rubrica": [
+        "Identifica que g=6,5% a perpetuidad supera el crecimiento nominal de la economía, lo que implica que la empresa acabaría siendo el PIB (2 puntos)",
+        "Identifica que r−g = 1,5% hace que el valor terminal sea hipersensible: medio punto de cambio en g mueve el resultado decenas de puntos porcentuales (2 puntos)",
+        "Identifica que presentar un punto (340 €) en vez de un rango es falsa precisión, dado que la tasa de descuento no es observable y la prima de riesgo es discutible (2 puntos)",
+        "Señala que el valor terminal probablemente representa la mayor parte del valor total y pide su porcentaje (1 punto)",
+        "Pide análisis de sensibilidad sobre r y g como requisito, no como añadido (2 puntos)",
+        "Menciona que un DCF inverso sobre los 210 € actuales sería más informativo que un precio objetivo (1 punto)"
+      ],
+      "puntos": 10
+    },
+    {
+      "id": "s1-caso2",
+      "titulo": "La estrategia del 9 de cada 10",
+      "enunciado": "Un conocido te presenta su estrategia: vende opciones semanalmente, gana en el 92% de las semanas, lleva 14 meses seguidos en positivo y su volatilidad mensual es muy baja. Te enseña la curva de resultados: es casi una recta ascendente. Usando exclusivamente lo visto esta semana, escribe qué le preguntarías y qué riesgo estructural sospechas.",
+      "rubrica": [
+        "Identifica el perfil como valor esperado potencialmente negativo pese a la alta tasa de acierto: muchos aciertos pequeños contra pérdidas raras y grandes (2 puntos)",
+        "Señala que la baja volatilidad y la curva recta son precisamente lo que se espera de este perfil ANTES del evento, no evidencia de calidad (2 puntos)",
+        "Pregunta por la pérdida máxima posible en un escenario de gap, no por la pérdida máxima histórica (2 puntos)",
+        "Menciona colas gordas: 14 meses no contienen ningún evento de cola, luego no informan sobre el riesgo (1 punto)",
+        "Menciona riesgo de ruina o tamaño de posición como la variable decisiva (2 puntos)",
+        "Menciona que la volatilidad baja habilita más apalancamiento en los sistemas de riesgo, agravando el problema (1 punto)"
+      ],
+      "puntos": 10
+    },
+    {
+      "id": "s1-caso3",
+      "titulo": "Descomponer un año",
+      "enunciado": "Un índice sube un 26% en un año. Los beneficios agregados de sus componentes han crecido un 5% y la rentabilidad por dividendo es del 1,8%. Descompón el retorno en sus tres fuentes, calcula el componente de expansión de múltiplo, y explica qué implica para el retorno esperado de los años siguientes. Sé explícito sobre lo que tu análisis NO permite afirmar.",
+      "rubrica": [
+        "Descompone correctamente: ~1,8% dividendo + ~5% crecimiento + ~19% expansión de múltiplo (3 puntos)",
+        "Identifica que aproximadamente tres cuartas partes del retorno vino del componente prestado (2 puntos)",
+        "Explica que la expansión de múltiplo es de suma cero a nivel agregado y está acotada, mientras los beneficios no lo están (2 puntos)",
+        "Señala explícitamente que esto NO permite predecir una caída ni el momento de una reversión (2 puntos)",
+        "Menciona que ex-ante la expansión de múltiplo y el crecimiento se sienten idénticamente bien, que es el mecanismo de las burbujas (1 punto)"
+      ],
+      "puntos": 10
+    }
+  ]
+}

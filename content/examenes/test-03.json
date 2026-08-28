@@ -1,0 +1,140 @@
+{
+  "id": "test-03",
+  "sesion": "03",
+  "tipo": "diario",
+  "titulo": "Test diario · Riesgo no es volatilidad",
+  "corte": 0.8,
+  "n_preguntas": 10,
+  "preguntas": [
+    {
+      "id": "03-q1",
+      "concepto": "drawdown",
+      "enunciado": "Pierdes un 60% de tu capital. ¿Cuánto necesitas ganar para volver al punto de partida?",
+      "opciones": ["60%", "100%", "150%", "240%"],
+      "correcta": 2,
+      "explicacion": "De 100 pasas a 40. Para volver a 100 necesitas multiplicar por 2,5, es decir +150%. Las pérdidas y ganancias no son simétricas porque se componen multiplicativamente.",
+      "distractores": {
+        "0": "La simetría aditiva es la intuición por defecto y es errónea. Es el error que hace subestimar el coste real de un mal año.",
+        "1": "Es la respuesta para una caída del 50%, no del 60%.",
+        "3": "Sobreestima; corresponde a una caída mayor."
+      }
+    },
+    {
+      "id": "03-q2",
+      "concepto": "Knight",
+      "enunciado": "¿Cuál es la diferencia entre riesgo e incertidumbre según Knight?",
+      "opciones": ["El riesgo es cuantificable y la incertidumbre es cualitativa", "En el riesgo conoces la distribución de probabilidad; en la incertidumbre ni siquiera eso", "El riesgo es a corto plazo y la incertidumbre a largo", "El riesgo afecta a un activo y la incertidumbre al mercado entero"],
+      "correcta": 1,
+      "explicacion": "Riesgo es una ruleta: no sabes el resultado pero conoces las 37 casillas. Incertidumbre es no saber cuántas casillas hay. El mercado es mayoritariamente incertidumbre disfrazada de riesgo mediante números con muchos decimales.",
+      "distractores": {
+        "0": "Se acerca pero es vago: no identifica que lo desconocido es la distribución misma.",
+        "2": "El plazo no tiene nada que ver con la distinción.",
+        "3": "Eso describe riesgo idiosincrático vs sistemático, otro concepto."
+      }
+    },
+    {
+      "id": "03-q3",
+      "concepto": "ergodicidad",
+      "enunciado": "Un juego: cara sube tu capital un 50%, cruz lo baja un 40%. Apuestas todo cada vez. ¿Qué ocurre a largo plazo?",
+      "opciones": ["Ganas un 5% por tirada, que es el valor esperado", "Tu capital tiende a cero, porque cada par cara-cruz lo multiplica por 0,90", "El resultado depende del orden de las tiradas", "Te quedas igual, porque +50 y −40 casi se compensan"],
+      "correcta": 1,
+      "explicacion": "1,50 × 0,60 = 0,90. Cada par te quita un 10%. El valor esperado (+5%) es un promedio de conjunto; tú vives una trayectoria. La multiplicación de capital no es ergódica.",
+      "distractores": {
+        "0": "El valor esperado es correcto y aun así te arruinas. Ese es exactamente el punto de la sesión.",
+        "2": "La multiplicación es conmutativa: el orden no cambia el resultado final.",
+        "3": "Intuición aditiva aplicada a un proceso multiplicativo."
+      }
+    },
+    {
+      "id": "03-q4",
+      "concepto": "colas gordas",
+      "enunciado": "El 19 de octubre de 1987 el Dow cayó un 22,6% en una sesión, un movimiento de unas 20 desviaciones típicas. ¿Qué demuestra?",
+      "opciones": ["Que fue un evento irrepetible", "Que la distribución normal subestima gravemente la frecuencia de los eventos extremos", "Que la volatilidad estaba mal calculada aquel día", "Que los mercados son irracionales"],
+      "correcta": 1,
+      "explicacion": "Bajo una normal, un evento de 20 sigmas no debería haber ocurrido ni una vez en la historia del universo. Ocurrió, y ha vuelto a ocurrir algo parecido varias veces desde entonces. Los retornos tienen colas gordas.",
+      "distractores": {
+        "0": "Ha habido episodios comparables en 1929, 2008 y 2020. Tratar cada uno como irrepetible es el mecanismo que perpetúa el error.",
+        "2": "El problema no es el cálculo de la volatilidad sino la distribución que se le supone.",
+        "3": "Etiqueta moral que no explica nada ni ayuda a modelar."
+      }
+    },
+    {
+      "id": "03-q5",
+      "concepto": "VaR",
+      "enunciado": "¿Cuál es la crítica de fondo al VaR al 95%?",
+      "opciones": ["Que es difícil de calcular", "Que deja fuera por construcción precisamente el 5% de escenarios que pueden eliminarte", "Que solo sirve para renta fija", "Que se calcula sobre datos futuros"],
+      "correcta": 1,
+      "explicacion": "El VaR te dice cuánto pierdes en los días normales. No dice nada sobre la magnitud de la pérdida en la cola que excluye. Te indica dónde está la puerta pero no qué hay detrás.",
+      "distractores": {
+        "0": "Es fácil de calcular; ese es parte de su atractivo y del problema.",
+        "2": "Se usa en todas las clases de activo y en la regulación bancaria.",
+        "3": "Se calcula sobre datos pasados, que es otra crítica válida pero distinta."
+      }
+    },
+    {
+      "id": "03-q6",
+      "concepto": "volatilidad como medida",
+      "enunciado": "¿Cuál es el defecto de la desviación típica como medida de riesgo que corrige el ratio de Sortino?",
+      "opciones": ["Que asume normalidad", "Que es retrospectiva", "Que trata igual las subidas que las bajadas", "Que no se puede sumar entre activos"],
+      "correcta": 2,
+      "explicacion": "Sortino usa solo la semidesviación a la baja. Los otros defectos citados son reales pero Sortino no los corrige: sigue siendo retrospectivo y sigue siendo una estimación sobre una distribución desconocida.",
+      "distractores": {
+        "0": "Defecto real de la desviación típica, pero Sortino no lo resuelve.",
+        "1": "Igual: cierto y no corregido por Sortino.",
+        "3": "Sí se puede sumar vía covarianzas; es precisamente su ventaja histórica."
+      }
+    },
+    {
+      "id": "03-q7",
+      "concepto": "ruina",
+      "enunciado": "¿Por qué el riesgo de ruina se trata como restricción y no como variable a optimizar?",
+      "opciones": ["Porque es difícil de estimar", "Porque es un estado absorbente: no admite compensación con más retorno esperado", "Porque los reguladores lo exigen", "Porque suele ser muy pequeño"],
+      "correcta": 1,
+      "explicacion": "Una variable admite trade-offs. Un estado absorbente no: una vez dentro no hay retorno. Una estrategia con 1% de ruina por periodo, repetida suficientes veces, termina en cero con certeza.",
+      "distractores": {
+        "0": "Cierto y no es la razón conceptual.",
+        "2": "Puede haber exigencia regulatoria, pero el argumento es matemático, no normativo.",
+        "3": "Que sea pequeño es justamente lo que lo hace peligroso: se ignora."
+      }
+    },
+    {
+      "id": "03-q8",
+      "concepto": "estabilidad e inestabilidad",
+      "enunciado": "¿Por qué los periodos de baja volatilidad prolongada suelen preceder a los episodios más peligrosos?",
+      "opciones": ["Por casualidad estadística", "Porque los modelos de riesgo miden poco riesgo, lo que permite acumular más apalancamiento", "Porque los inversores se aburren y venden", "Porque la volatilidad siempre revierte a la media"],
+      "correcta": 1,
+      "explicacion": "Si el riesgo se mide con volatilidad histórica y la volatilidad es baja, todos los sistemas de control permiten más exposición. La calma genera el apalancamiento que produce el siguiente episodio. Es la hipótesis de inestabilidad financiera de Minsky.",
+      "distractores": {
+        "0": "Hay un mecanismo causal identificable, no azar.",
+        "2": "No describe ningún mecanismo de acumulación de fragilidad.",
+        "3": "La reversión a la media describe el patrón sin explicar por qué el episodio es tan violento."
+      }
+    },
+    {
+      "id": "03-q9",
+      "concepto": "tres riesgos",
+      "enunciado": "Un activo cae lentamente durante tres años, sin apenas volatilidad, hasta valer un 15% de lo que valía. ¿Qué tipo de riesgo se materializó?",
+      "opciones": ["Volatilidad", "Pérdida permanente de capital", "Riesgo de ruina", "Ninguno: sin volatilidad no hay riesgo"],
+      "correcta": 1,
+      "explicacion": "Es el caso que separa los conceptos: cero volatilidad y destrucción casi total del capital. La industria mide el primero y te hace daño el segundo.",
+      "distractores": {
+        "0": "Precisamente no la hubo, y esa es la trampa del enunciado.",
+        "2": "Sería ruina solo si esa posición representaba todo tu capital y no puedes seguir operando.",
+        "3": "Es la conclusión que se sigue de confundir riesgo con volatilidad, y es falsa."
+      }
+    },
+    {
+      "id": "03-q10",
+      "concepto": "límites del concepto",
+      "enunciado": "¿Cuál es el uso indebido más frecuente de la frase 'la volatilidad no es riesgo'?",
+      "opciones": ["Usarla para justificar no vender un activo que cae y podría estar diciendo que la tesis es falsa", "Usarla para vender opciones", "Usarla para calcular el Sharpe", "Usarla para comparar fondos"],
+      "correcta": 0,
+      "explicacion": "La frase es correcta y se convierte en una excusa cómoda. Una caída puede ser ruido o puede ser información. La defensa es haber escrito de antemano qué evidencia invalidaría la tesis.",
+      "distractores": {
+        "1": "La venta de opciones tiene sus propios problemas, tratados en la sesión 18, pero no es el abuso típico de esta frase.",
+        "2": "El Sharpe usa volatilidad por definición; no hay abuso ahí.",
+        "3": "Comparar fondos por volatilidad es limitado, no un abuso de esta frase concreta."
+      }
+    }
+  ]
+}

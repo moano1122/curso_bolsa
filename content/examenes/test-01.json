@@ -1,0 +1,140 @@
+{
+  "id": "test-01",
+  "sesion": "01",
+  "tipo": "diario",
+  "titulo": "Test diario · Qué es realmente un activo",
+  "corte": 0.8,
+  "n_preguntas": 10,
+  "preguntas": [
+    {
+      "id": "01-q1",
+      "concepto": "residual claim",
+      "enunciado": "Una empresa genera 100 de ingresos y tiene 90 de costes totales. Los ingresos caen un 10% y los costes solo bajan a 88 porque la mayoría son fijos. ¿Cuánto cae el beneficio del accionista?",
+      "opciones": ["Un 10%, igual que los ingresos", "Un 20%", "Un 80%", "Un 2%, porque los costes también bajaron"],
+      "correcta": 2,
+      "explicacion": "Pasa de 10 (100−90) a 2 (90−88). Una caída del 80%. El accionista cobra un residuo, y un residuo es la resta de dos números grandes y parecidos: cualquier variación pequeña arriba se amplifica abajo. Esto es apalancamiento operativo.",
+      "distractores": {
+        "0": "Es el error de asumir que todo escala proporcionalmente. Tienta porque es la intuición lineal por defecto, y es justo la que rompe el concepto de residuo.",
+        "1": "Suena a 'algo más que proporcional' sin hacer el cálculo. Media respuesta correcta es incorrecta aquí.",
+        "3": "Confunde la caída de los costes con un amortiguador suficiente. Los costes bajaron 2 mientras los ingresos bajaron 10."
+      }
+    },
+    {
+      "id": "01-q2",
+      "concepto": "mercado primario vs secundario",
+      "enunciado": "Compras acciones de Apple por 10.000 € en el mercado. ¿Qué recibe Apple?",
+      "opciones": ["10.000 €, que usa para financiarse", "Nada; el dinero va al inversor que te las vendió", "Una comisión proporcional", "Depende de si es una acción con dividendo"],
+      "correcta": 1,
+      "explicacion": "El mercado secundario transfiere propiedad entre inversores. La empresa solo recibe dinero en el mercado primario: IPO, ampliación de capital o emisión de deuda.",
+      "distractores": {
+        "0": "Es la confusión más extendida entre gente con años de experiencia. Tienta porque el relato de 'invertir en una empresa' sugiere financiarla.",
+        "2": "Las comisiones van al bróker y al mercado, nunca al emisor.",
+        "3": "El dividendo es un flujo de la empresa hacia ti, no tiene relación con quién cobra tu compra."
+      }
+    },
+    {
+      "id": "01-q3",
+      "concepto": "fuentes de retorno",
+      "enunciado": "Una acción sube un 40% en un año. Los beneficios de la empresa han crecido un 8% y no paga dividendo. ¿De dónde vino el resto de la subida?",
+      "opciones": ["De la expansión de múltiplo", "De las recompras de acciones", "Del crecimiento de los ingresos", "De la reducción de deuda"],
+      "correcta": 0,
+      "explicacion": "Si el beneficio crece 8% y el precio 40%, el mercado está pagando más por cada euro de beneficio. Ese componente es el único de los tres que es prestado: procede de un cambio de opinión colectiva y a nivel agregado es de suma cero.",
+      "distractores": {
+        "1": "Una recompra sube el beneficio por acción, lo cual ya estaría reflejado en la cifra de beneficios dada. Además el enunciado no las menciona.",
+        "2": "El crecimiento de ingresos sin crecimiento de beneficio no aporta valor al accionista; lo que importa es el residuo.",
+        "3": "Reducir deuda cambia la estructura de capital, no explica una brecha de 32 puntos entre precio y beneficio."
+      }
+    },
+    {
+      "id": "01-q4",
+      "concepto": "cajones de Buffett",
+      "enunciado": "¿Qué tienen en común el oro y bitcoin desde el punto de vista de la valoración?",
+      "opciones": ["Ambos son refugio en las crisis", "Ambos tienen oferta limitada", "Ninguno genera flujo de caja, por lo que no admiten descuento de flujos", "Ambos están correlacionados con la inflación"],
+      "correcta": 2,
+      "explicacion": "La afirmación relevante es sobre qué herramienta de valoración aplica. Sin flujo, no hay DCF posible: cualquier valoración se apoya en modelos de adopción, escasez o flujo de fondos. No es un juicio sobre su calidad como inversión.",
+      "distractores": {
+        "0": "Es una afirmación empírica discutible (bitcoin cayó con las bolsas en 2022) y, sobre todo, no es lo que los agrupa en el mismo cajón.",
+        "1": "El oro no tiene oferta fija: se sigue minando. Y la oferta limitada no es lo que define el cajón.",
+        "3": "Afirmación empíricamente débil para ambos en horizontes cortos, e irrelevante para la clasificación."
+      }
+    },
+    {
+      "id": "01-q5",
+      "concepto": "definición de acción",
+      "enunciado": "¿Cuál es la definición técnicamente correcta de una acción?",
+      "opciones": ["Un derecho de propiedad sobre el flujo de caja residual de un negocio, a perpetuidad", "Un título que representa una parte de los activos de una empresa", "Un contrato que da derecho a cobrar dividendos", "Una participación en los beneficios anuales de la empresa"],
+      "correcta": 0,
+      "explicacion": "Las tres palabras cargadas son residual (cobras el último), flujo de caja (no beneficio contable) y perpetuidad (no vence).",
+      "distractores": {
+        "1": "Confunde valor contable con valor económico. Los activos son un dato del balance; el valor viene de lo que producen, no de lo que costaron.",
+        "2": "No tienes derecho contractual a ningún dividendo. La empresa puede no pagarlo nunca y estás en tu derecho de nada.",
+        "3": "Beneficio anual no es flujo de caja, y 'participación en beneficios' omite que cobras el último y solo si sobra."
+      }
+    },
+    {
+      "id": "01-q6",
+      "concepto": "orden de cobro",
+      "enunciado": "En una liquidación, ¿quién cobra inmediatamente antes que el accionista ordinario?",
+      "opciones": ["Hacienda", "Los acreedores", "Los accionistas preferentes", "Los empleados"],
+      "correcta": 2,
+      "explicacion": "El orden es proveedores, empleados, acreedores, Hacienda, preferentes y por último el ordinario. El preferente es el escalón inmediatamente anterior.",
+      "distractores": {
+        "0": "Hacienda cobra antes, pero no es el escalón inmediatamente anterior.",
+        "1": "Los acreedores cobran antes que Hacienda y que los preferentes.",
+        "3": "Los empleados están cerca del principio de la cola, no del final."
+      }
+    },
+    {
+      "id": "01-q7",
+      "concepto": "Graham",
+      "enunciado": "La frase de Graham sobre la máquina de votar y la de pesar, traducida a términos técnicos, significa que:",
+      "opciones": ["El mercado es irracional a corto y racional a largo", "A corto plazo domina el cambio de múltiplo y a largo dominan los beneficios y la caja devuelta", "Los inversores votan con su dinero y el peso es la capitalización", "A largo plazo todas las acciones convergen a su valor contable"],
+      "correcta": 1,
+      "explicacion": "Es una afirmación sobre qué componente explica la varianza del precio según el horizonte. A un año, el múltiplo puede explicar casi todo el movimiento; a cien años, su contribución es casi ruido.",
+      "distractores": {
+        "0": "Es la lectura popular y es más floja: no distingue componentes, solo etiqueta épocas como racionales o no.",
+        "2": "Juego de palabras sin contenido técnico.",
+        "3": "El valor contable no es el ancla de largo plazo; los flujos lo son. Confundirlos lleva a trampas de valor."
+      }
+    },
+    {
+      "id": "01-q8",
+      "concepto": "función del mercado",
+      "enunciado": "¿Por qué la existencia de un mercado secundario líquido abarata el capital en el mercado primario?",
+      "opciones": ["Porque permite que la empresa recompre sus acciones", "Porque el inversor sabe que puede salir sin depender de la empresa, y exige menos rentabilidad por participar", "Porque aumenta el precio de las acciones", "Porque reduce las comisiones de intermediación"],
+      "correcta": 1,
+      "explicacion": "Es exactamente la innovación de la VOC. Si el capital es permanente pero transferible, el inversor no queda atrapado, y esa liquidez reduce la rentabilidad que exige. Menor rentabilidad exigida es menor coste de capital para la empresa.",
+      "distractores": {
+        "0": "La recompra es una consecuencia posterior, no el mecanismo que abarata el capital.",
+        "2": "El precio en el secundario no aporta dinero a la empresa, salvo que amplíe capital.",
+        "3": "Las comisiones son de segundo orden frente a la prima por iliquidez."
+      }
+    },
+    {
+      "id": "01-q9",
+      "concepto": "historia VOC",
+      "enunciado": "¿Cuál fue la innovación de la VOC en 1602 que da origen a la bolsa moderna?",
+      "opciones": ["Pagar dividendos periódicos a los accionistas", "Cotizar en un edificio dedicado a la negociación", "Capital permanente combinado con participaciones transferibles a terceros", "Permitir que pequeños ahorradores invirtieran"],
+      "correcta": 2,
+      "explicacion": "Las dos ideas encadenadas: el dinero se queda dentro de la compañía indefinidamente, y a cambio puedes venderle tu participación a otro. Lo segundo es consecuencia necesaria de lo primero, y de ahí nace el mercado secundario.",
+      "distractores": {
+        "0": "Cierto pero no es la innovación estructural; los dividendos existían antes y la VOC llegó a pagarlos en especias.",
+        "1": "El edificio llegó en 1611, después y como consecuencia de que ya se negociaba.",
+        "3": "Ocurrió y es notable, pero es un efecto de la apertura de la suscripción, no la innovación financiera clave."
+      }
+    },
+    {
+      "id": "01-q10",
+      "concepto": "precio vs valor",
+      "enunciado": "¿Cuál es la asimetría fundamental entre precio y valor?",
+      "opciones": ["El precio siempre es mayor que el valor en mercados alcistas", "Lo que puedes medir con precisión no es lo que quieres saber, y lo que quieres saber no puedes medirlo con precisión", "El valor es objetivo y el precio subjetivo", "El precio incorpora toda la información y el valor no"],
+      "correcta": 1,
+      "explicacion": "El precio es observable, exacto y público. El valor es una estimación privada sobre el futuro. Toda la disciplina consiste en operar con esa asimetría sin engañarse.",
+      "distractores": {
+        "0": "Afirmación sin fundamento: no hay ninguna regla que garantice el signo de la diferencia.",
+        "2": "Es exactamente al revés en cuanto a observabilidad: el precio es el dato duro y el valor la estimación.",
+        "3": "Esa es la hipótesis de eficiencia, que es una postura discutida (sesión 07) y no la definición de la asimetría."
+      }
+    }
+  ]
+}

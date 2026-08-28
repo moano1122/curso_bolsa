@@ -1,0 +1,14 @@
+# Progreso local: cada PC tiene el suyo
+data/curso.db
+data/*.db-journal
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
