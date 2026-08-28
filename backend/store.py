@@ -222,6 +222,119 @@ def estadisticas():
     }
 
 
+# --- traspaso entre equipos ----------------------------------------------
+
+TABLAS_EXPORTABLES = ("progreso", "respuestas", "srs", "casos")
+
+
+def exportar():
+    """Todo el progreso en un dict serializable, para llevarlo a otro PC."""
+    con = conectar()
+    datos = {"version": 1, "generado": date.today().isoformat()}
+    for tabla in TABLAS_EXPORTABLES:
+        filas = con.execute(f"SELECT * FROM {tabla}").fetchall()
+        datos[tabla] = [dict(f) for f in filas]
+    con.close()
+    return datos
+
+
+def importar(datos, modo="fusionar"):
+    """modo 'reemplazar' borra lo local. 'fusionar' se queda con lo más
+    avanzado de cada lado: mejor nota, más intentos, repaso más atrasado."""
+    if datos.get("version") != 1:
+        raise ValueError("formato de progreso no reconocido")
+
+    con = conectar()
+    resumen = {"progreso": 0, "respuestas": 0, "srs": 0, "casos": 0}
+
+    if modo == "reemplazar":
+        for tabla in TABLAS_EXPORTABLES:
+            con.execute(f"DELETE FROM {tabla}")
+
+    for p in datos.get("progreso", []):
+        actual = con.execute(
+            "SELECT * FROM progreso WHERE sesion_id = ?", (p["sesion_id"],)
+        ).fetchone()
+        if actual is None:
+            con.execute(
+                """INSERT INTO progreso (sesion_id, estado, nota, intentos, fecha)
+                   VALUES (?, ?, ?, ?, ?)""",
+                (p["sesion_id"], p["estado"], p["nota"], p["intentos"], p["fecha"]),
+            )
+            resumen["progreso"] += 1
+        else:
+            # aprobada gana sobre suspendida; el resto se queda con el máximo
+            estado = "aprobada" if "aprobada" in (actual["estado"], p["estado"]) \
+                else actual["estado"]
+            con.execute(
+                """UPDATE progreso SET estado = ?, nota = ?, intentos = ?, fecha = ?
+                   WHERE sesion_id = ?""",
+                (estado,
+                 max(actual["nota"] or 0, p["nota"] or 0),
+                 max(actual["intentos"], p["intentos"]),
+                 max(actual["fecha"] or "", p["fecha"] or ""),
+                 p["sesion_id"]),
+            )
+            resumen["progreso"] += 1
+
+    # las respuestas son un histórico: se añaden las que no estén ya
+    for r in datos.get("respuestas", []):
+        existe = con.execute(
+            """SELECT 1 FROM respuestas
+               WHERE examen_id = ? AND pregunta_id = ? AND fecha = ? AND elegida = ?""",
+            (r["examen_id"], r["pregunta_id"], r["fecha"], r["elegida"]),
+        ).fetchone()
+        if not existe:
+            con.execute(
+                """INSERT INTO respuestas
+                   (examen_id, pregunta_id, elegida, correcta, acierto, fecha)
+                   VALUES (?, ?, ?, ?, ?, ?)""",
+                (r["examen_id"], r["pregunta_id"], r["elegida"],
+                 r["correcta"], r["acierto"], r["fecha"]),
+            )
+            resumen["respuestas"] += 1
+
+    for s in datos.get("srs", []):
+        actual = con.execute(
+            "SELECT * FROM srs WHERE pregunta_id = ?", (s["pregunta_id"],)
+        ).fetchone()
+        # gana el registro con más historial; ante empate, el repaso más próximo
+        if actual is None or (s["aciertos"] + s["fallos"]) > \
+                (actual["aciertos"] + actual["fallos"]):
+            con.execute(
+                """INSERT INTO srs (pregunta_id, origen, facilidad, intervalo,
+                                    siguiente, aciertos, fallos)
+                   VALUES (?, ?, ?, ?, ?, ?, ?)
+                   ON CONFLICT(pregunta_id) DO UPDATE SET
+                     facilidad = excluded.facilidad,
+                     intervalo = excluded.intervalo,
+                     siguiente = excluded.siguiente,
+                     aciertos = excluded.aciertos,
+                     fallos = excluded.fallos""",
+                (s["pregunta_id"], s["origen"], s["facilidad"], s["intervalo"],
+                 s["siguiente"], s["aciertos"], s["fallos"]),
+            )
+            resumen["srs"] += 1
+
+    for c in datos.get("casos", []):
+        existe = con.execute(
+            "SELECT 1 FROM casos WHERE examen_id = ? AND caso_id = ? AND fecha = ?",
+            (c["examen_id"], c["caso_id"], c["fecha"]),
+        ).fetchone()
+        if not existe:
+            con.execute(
+                """INSERT INTO casos (examen_id, caso_id, respuesta, autonota, fecha)
+                   VALUES (?, ?, ?, ?, ?)""",
+                (c["examen_id"], c["caso_id"], c["respuesta"],
+                 c["autonota"], c["fecha"]),
+            )
+            resumen["casos"] += 1
+
+    con.commit()
+    con.close()
+    return resumen
+
+
 def reiniciar_semana(sesiones):
     """Suspender el examen semanal borra el estado de esa semana."""
     con = conectar()

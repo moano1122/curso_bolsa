@@ -38,6 +38,27 @@ Cada sesión arranca con las preguntas de repaso espaciado que estén vencidas,
 priorizando lo que más has fallado. El algoritmo es un SM-2 simplificado: fallar
 una pregunta la devuelve al día siguiente.
 
+## Estudiar en dos equipos
+
+Clona el repositorio en el otro PC y arranca igual. El contenido del curso viaja
+por git; **el progreso no**: `data/curso.db` está en `.gitignore` a propósito,
+porque SQLite es binario y un conflicto de merge te haría perder un historial
+entero.
+
+Para llevarte el progreso, en **Progreso → Llevarte el progreso a otro equipo**:
+
+1. **Exportar** en el PC donde estudiaste. Descarga un JSON.
+2. Cópialo al otro equipo e **Importar**.
+
+Traspasa notas, estado de desbloqueo, historial de respuestas y el calendario de
+repaso espaciado. Al importar eliges:
+
+- **Fusionar** (por defecto): se queda con lo más avanzado de cada lado. Una
+  sesión aprobada en cualquiera de los dos equipos queda aprobada, y de cada
+  pregunta gana el registro con más historial. Reimportar el mismo archivo no
+  duplica nada.
+- **Reemplazar**: borra el progreso local y deja el del archivo.
+
 ## Estado
 
 Semana 1 escrita y funcionando (sesiones 01–05). El resto del temario está

@@ -237,6 +237,9 @@ class Handler(BaseHTTPRequestHandler):
         if ruta == "/api/stats":
             return self._json(store.estadisticas())
 
+        if ruta == "/api/progreso/exportar":
+            return self._json(store.exportar())
+
         return self._estatico(ruta.lstrip("/"))
 
     def do_POST(self):
@@ -248,6 +251,14 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(corregir(
                 cuerpo["examen_id"], cuerpo["sesion_id"], cuerpo["respuestas"]
             ))
+
+        if ruta == "/api/progreso/importar":
+            try:
+                resumen = store.importar(cuerpo.get("datos", {}),
+                                         cuerpo.get("modo", "fusionar"))
+            except ValueError as e:
+                return self._json({"error": str(e)}, 400)
+            return self._json({"ok": True, "resumen": resumen})
 
         if ruta == "/api/caso":
             store.guardar_caso(cuerpo["examen_id"], cuerpo["caso_id"],

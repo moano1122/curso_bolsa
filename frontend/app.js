@@ -286,7 +286,56 @@ async function verStats() {
         <div class="t">${p.pregunta_id}</div>
         <div class="s">${p.fallos} fallo(s) · ${p.aciertos} acierto(s)</div>
       </div>`).join('')}</div>`
-      : '<p class="vacio">Nada fallado todavía. Aparecerán aquí las preguntas que se te resistan, y el repaso espaciado las traerá de vuelta.</p>'}`;
+      : '<p class="vacio">Nada fallado todavía. Aparecerán aquí las preguntas que se te resistan, y el repaso espaciado las traerá de vuelta.</p>'}
+
+    <h2>Llevarte el progreso a otro equipo</h2>
+    <p style="color:#9195a6;font-size:14px;line-height:1.6">
+      La base de datos no se sincroniza por git: es local en cada PC. Exporta un
+      archivo aquí, cópialo al otro equipo e impórtalo. Se traspasan las notas,
+      el estado de desbloqueo, los fallos y el calendario de repaso espaciado.</p>
+    <div class="acciones" style="margin-top:18px">
+      <button class="btn" id="exportar">Exportar progreso</button>
+      <button class="btn sec" id="importar">Importar progreso</button>
+      <input type="file" id="fichero" accept="application/json" hidden>
+      <span id="msg" style="color:#9195a6;font-size:13px"></span>
+    </div>`;
+
+  $('#exportar').addEventListener('click', async () => {
+    const { datos: p } = await api('/api/progreso/exportar');
+    const url = URL.createObjectURL(new Blob([JSON.stringify(p, null, 1)],
+      { type: 'application/json' }));
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `progreso-curso-bolsa-${p.generado}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    $('#msg').textContent = 'Archivo descargado.';
+  });
+
+  $('#importar').addEventListener('click', () => $('#fichero').click());
+
+  $('#fichero').addEventListener('change', async e => {
+    const f = e.target.files[0];
+    if (!f) return;
+    let contenido;
+    try {
+      contenido = JSON.parse(await f.text());
+    } catch {
+      $('#msg').textContent = 'El archivo no es un JSON válido.';
+      return;
+    }
+    const reemplazar = confirm(
+      'Aceptar: FUSIONAR con lo que ya tienes (se queda con lo más avanzado de cada lado).\n' +
+      'Cancelar: REEMPLAZAR todo tu progreso local por el del archivo.\n\n' +
+      '¿Fusionar?');
+    const { ok, datos: r } = await post('/api/progreso/importar', {
+      datos: contenido, modo: reemplazar ? 'fusionar' : 'reemplazar'
+    });
+    if (!ok) { $('#msg').textContent = 'Error: ' + (r.error || 'desconocido'); return; }
+    await cargarCurso();
+    $('#msg').textContent = `Importado: ${r.resumen.progreso} sesiones, ` +
+      `${r.resumen.respuestas} respuestas, ${r.resumen.srs} tarjetas de repaso.`;
+  });
 }
 
 /* ---------- arranque ---------- */
