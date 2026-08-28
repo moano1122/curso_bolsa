@@ -4,13 +4,18 @@
   "tipo": "diario",
   "titulo": "Test diario · Riesgo no es volatilidad",
   "corte": 0.8,
-  "n_preguntas": 10,
+  "n_preguntas": 15,
   "preguntas": [
     {
       "id": "03-q1",
       "concepto": "drawdown",
       "enunciado": "Pierdes un 60% de tu capital. ¿Cuánto necesitas ganar para volver al punto de partida?",
-      "opciones": ["60%", "100%", "150%", "240%"],
+      "opciones": [
+        "60%",
+        "100%",
+        "150%",
+        "240%"
+      ],
       "correcta": 2,
       "explicacion": "De 100 pasas a 40. Para volver a 100 necesitas multiplicar por 2,5, es decir +150%. Las pérdidas y ganancias no son simétricas porque se componen multiplicativamente.",
       "distractores": {
@@ -23,20 +28,30 @@
       "id": "03-q2",
       "concepto": "Knight",
       "enunciado": "¿Cuál es la diferencia entre riesgo e incertidumbre según Knight?",
-      "opciones": ["El riesgo es cuantificable y la incertidumbre es cualitativa", "En el riesgo conoces la distribución de probabilidad; en la incertidumbre ni siquiera eso", "El riesgo es a corto plazo y la incertidumbre a largo", "El riesgo afecta a un activo y la incertidumbre al mercado entero"],
-      "correcta": 1,
+      "opciones": [
+        "El riesgo es cuantificable y la incertidumbre es cualitativa",
+        "El riesgo es a corto plazo y la incertidumbre a largo",
+        "El riesgo afecta a un activo y la incertidumbre al mercado entero",
+        "En el riesgo conoces la distribución de probabilidad; en la incertidumbre ni siquiera eso"
+      ],
+      "correcta": 3,
       "explicacion": "Riesgo es una ruleta: no sabes el resultado pero conoces las 37 casillas. Incertidumbre es no saber cuántas casillas hay. El mercado es mayoritariamente incertidumbre disfrazada de riesgo mediante números con muchos decimales.",
       "distractores": {
         "0": "Se acerca pero es vago: no identifica que lo desconocido es la distribución misma.",
-        "2": "El plazo no tiene nada que ver con la distinción.",
-        "3": "Eso describe riesgo idiosincrático vs sistemático, otro concepto."
+        "1": "El plazo no tiene nada que ver con la distinción.",
+        "2": "Eso describe riesgo idiosincrático vs sistemático, otro concepto."
       }
     },
     {
       "id": "03-q3",
       "concepto": "ergodicidad",
       "enunciado": "Un juego: cara sube tu capital un 50%, cruz lo baja un 40%. Apuestas todo cada vez. ¿Qué ocurre a largo plazo?",
-      "opciones": ["Ganas un 5% por tirada, que es el valor esperado", "Tu capital tiende a cero, porque cada par cara-cruz lo multiplica por 0,90", "El resultado depende del orden de las tiradas", "Te quedas igual, porque +50 y −40 casi se compensan"],
+      "opciones": [
+        "Ganas un 5% por tirada, que es el valor esperado",
+        "Tu capital tiende a cero, porque cada par cara-cruz lo multiplica por 0,90",
+        "El resultado depende del orden de las tiradas",
+        "Te quedas igual, porque +50 y −40 casi se compensan"
+      ],
       "correcta": 1,
       "explicacion": "1,50 × 0,60 = 0,90. Cada par te quita un 10%. El valor esperado (+5%) es un promedio de conjunto; tú vives una trayectoria. La multiplicación de capital no es ergódica.",
       "distractores": {
@@ -49,11 +64,16 @@
       "id": "03-q4",
       "concepto": "colas gordas",
       "enunciado": "El 19 de octubre de 1987 el Dow cayó un 22,6% en una sesión, un movimiento de unas 20 desviaciones típicas. ¿Qué demuestra?",
-      "opciones": ["Que fue un evento irrepetible", "Que la distribución normal subestima gravemente la frecuencia de los eventos extremos", "Que la volatilidad estaba mal calculada aquel día", "Que los mercados son irracionales"],
-      "correcta": 1,
+      "opciones": [
+        "Que la normal subestima la frecuencia de los eventos extremos",
+        "Que fue un evento irrepetible",
+        "Que la volatilidad estaba mal calculada aquel día",
+        "Que los mercados son irracionales"
+      ],
+      "correcta": 0,
       "explicacion": "Bajo una normal, un evento de 20 sigmas no debería haber ocurrido ni una vez en la historia del universo. Ocurrió, y ha vuelto a ocurrir algo parecido varias veces desde entonces. Los retornos tienen colas gordas.",
       "distractores": {
-        "0": "Ha habido episodios comparables en 1929, 2008 y 2020. Tratar cada uno como irrepetible es el mecanismo que perpetúa el error.",
+        "1": "Ha habido episodios comparables en 1929, 2008 y 2020. Tratar cada uno como irrepetible es el mecanismo que perpetúa el error.",
         "2": "El problema no es el cálculo de la volatilidad sino la distribución que se le supone.",
         "3": "Etiqueta moral que no explica nada ni ayuda a modelar."
       }
@@ -62,25 +82,35 @@
       "id": "03-q5",
       "concepto": "VaR",
       "enunciado": "¿Cuál es la crítica de fondo al VaR al 95%?",
-      "opciones": ["Que es difícil de calcular", "Que deja fuera por construcción precisamente el 5% de escenarios que pueden eliminarte", "Que solo sirve para renta fija", "Que se calcula sobre datos futuros"],
-      "correcta": 1,
+      "opciones": [
+        "Que es difícil de calcular con precisión suficiente",
+        "Que solo tiene sentido aplicado a carteras de renta fija",
+        "Que se calcula proyectando datos futuros poco fiables",
+        "Que deja fuera precisamente el 5% que puede eliminarte"
+      ],
+      "correcta": 3,
       "explicacion": "El VaR te dice cuánto pierdes en los días normales. No dice nada sobre la magnitud de la pérdida en la cola que excluye. Te indica dónde está la puerta pero no qué hay detrás.",
       "distractores": {
         "0": "Es fácil de calcular; ese es parte de su atractivo y del problema.",
-        "2": "Se usa en todas las clases de activo y en la regulación bancaria.",
-        "3": "Se calcula sobre datos pasados, que es otra crítica válida pero distinta."
+        "1": "Se usa en todas las clases de activo y en la regulación bancaria.",
+        "2": "Se calcula sobre datos pasados, que es otra crítica válida pero distinta."
       }
     },
     {
       "id": "03-q6",
       "concepto": "volatilidad como medida",
       "enunciado": "¿Cuál es el defecto de la desviación típica como medida de riesgo que corrige el ratio de Sortino?",
-      "opciones": ["Que asume normalidad", "Que es retrospectiva", "Que trata igual las subidas que las bajadas", "Que no se puede sumar entre activos"],
-      "correcta": 2,
+      "opciones": [
+        "Que trata igual las subidas que las bajadas del precio",
+        "Que asume una distribución normal de los retornos",
+        "Que es retrospectiva y se calcula sobre el pasado",
+        "Que no se puede sumar limpiamente entre varios activos"
+      ],
+      "correcta": 0,
       "explicacion": "Sortino usa solo la semidesviación a la baja. Los otros defectos citados son reales pero Sortino no los corrige: sigue siendo retrospectivo y sigue siendo una estimación sobre una distribución desconocida.",
       "distractores": {
-        "0": "Defecto real de la desviación típica, pero Sortino no lo resuelve.",
-        "1": "Igual: cierto y no corregido por Sortino.",
+        "1": "Defecto real de la desviación típica, pero Sortino no lo resuelve.",
+        "2": "Igual: cierto y no corregido por Sortino.",
         "3": "Sí se puede sumar vía covarianzas; es precisamente su ventaja histórica."
       }
     },
@@ -88,7 +118,12 @@
       "id": "03-q7",
       "concepto": "ruina",
       "enunciado": "¿Por qué el riesgo de ruina se trata como restricción y no como variable a optimizar?",
-      "opciones": ["Porque es difícil de estimar", "Porque es un estado absorbente: no admite compensación con más retorno esperado", "Porque los reguladores lo exigen", "Porque suele ser muy pequeño"],
+      "opciones": [
+        "Porque es difícil de estimar",
+        "Porque es un estado absorbente",
+        "Porque los reguladores lo exigen",
+        "Porque suele ser muy pequeño"
+      ],
       "correcta": 1,
       "explicacion": "Una variable admite trade-offs. Un estado absorbente no: una vez dentro no hay retorno. Una estrategia con 1% de ruina por periodo, repetida suficientes veces, termina en cero con certeza.",
       "distractores": {
@@ -101,11 +136,16 @@
       "id": "03-q8",
       "concepto": "estabilidad e inestabilidad",
       "enunciado": "¿Por qué los periodos de baja volatilidad prolongada suelen preceder a los episodios más peligrosos?",
-      "opciones": ["Por casualidad estadística", "Porque los modelos de riesgo miden poco riesgo, lo que permite acumular más apalancamiento", "Porque los inversores se aburren y venden", "Porque la volatilidad siempre revierte a la media"],
-      "correcta": 1,
+      "opciones": [
+        "Porque los modelos permiten acumular más apalancamiento",
+        "Por casualidad estadística",
+        "Porque los inversores se aburren y venden",
+        "Porque la volatilidad siempre revierte a la media"
+      ],
+      "correcta": 0,
       "explicacion": "Si el riesgo se mide con volatilidad histórica y la volatilidad es baja, todos los sistemas de control permiten más exposición. La calma genera el apalancamiento que produce el siguiente episodio. Es la hipótesis de inestabilidad financiera de Minsky.",
       "distractores": {
-        "0": "Hay un mecanismo causal identificable, no azar.",
+        "1": "Hay un mecanismo causal identificable, no azar.",
         "2": "No describe ningún mecanismo de acumulación de fragilidad.",
         "3": "La reversión a la media describe el patrón sin explicar por qué el episodio es tan violento."
       }
@@ -114,11 +154,16 @@
       "id": "03-q9",
       "concepto": "tres riesgos",
       "enunciado": "Un activo cae lentamente durante tres años, sin apenas volatilidad, hasta valer un 15% de lo que valía. ¿Qué tipo de riesgo se materializó?",
-      "opciones": ["Volatilidad", "Pérdida permanente de capital", "Riesgo de ruina", "Ninguno: sin volatilidad no hay riesgo"],
-      "correcta": 1,
+      "opciones": [
+        "Pérdida permanente de capital",
+        "Volatilidad",
+        "Riesgo de ruina",
+        "Ninguno: sin volatilidad no hay riesgo"
+      ],
+      "correcta": 0,
       "explicacion": "Es el caso que separa los conceptos: cero volatilidad y destrucción casi total del capital. La industria mide el primero y te hace daño el segundo.",
       "distractores": {
-        "0": "Precisamente no la hubo, y esa es la trampa del enunciado.",
+        "1": "Precisamente no la hubo, y esa es la trampa del enunciado.",
         "2": "Sería ruina solo si esa posición representaba todo tu capital y no puedes seguir operando.",
         "3": "Es la conclusión que se sigue de confundir riesgo con volatilidad, y es falsa."
       }
@@ -127,13 +172,108 @@
       "id": "03-q10",
       "concepto": "límites del concepto",
       "enunciado": "¿Cuál es el uso indebido más frecuente de la frase 'la volatilidad no es riesgo'?",
-      "opciones": ["Usarla para justificar no vender un activo que cae y podría estar diciendo que la tesis es falsa", "Usarla para vender opciones", "Usarla para calcular el Sharpe", "Usarla para comparar fondos"],
-      "correcta": 0,
+      "opciones": [
+        "Usarla para justificar la venta sistemática de opciones",
+        "Usarla para no vender algo que cae y podría invalidar tu tesis",
+        "Usarla para descartar el ratio de Sharpe como métrica",
+        "Usarla para comparar fondos con perfiles muy distintos"
+      ],
+      "correcta": 1,
       "explicacion": "La frase es correcta y se convierte en una excusa cómoda. Una caída puede ser ruido o puede ser información. La defensa es haber escrito de antemano qué evidencia invalidaría la tesis.",
       "distractores": {
-        "1": "La venta de opciones tiene sus propios problemas, tratados en la sesión 18, pero no es el abuso típico de esta frase.",
+        "0": "La venta de opciones tiene sus propios problemas, tratados en la sesión 18, pero no es el abuso típico de esta frase.",
         "2": "El Sharpe usa volatilidad por definición; no hay abuso ahí.",
         "3": "Comparar fondos por volatilidad es limitado, no un abuso de esta frase concreta."
+      }
+    },
+    {
+      "id": "03-q11",
+      "concepto": "liquidez",
+      "enunciado": "Un fondo inmobiliario muestra una volatilidad histórica muy baja, mucho menor que la bolsa. ¿Qué deberías sospechar antes de concluir que es más seguro?",
+      "opciones": [
+        "Que si el activo no cotiza, no puede mostrar volatilidad",
+        "Que sus gestores son mejores que los de la bolsa",
+        "Que tiene bastante menos apalancamiento que el mercado",
+        "Que está bien diversificado por zonas geográficas"
+      ],
+      "correcta": 0,
+      "explicacion": "La volatilidad baja por iliquidez o por valoración interna es un artefacto de medición, no tranquilidad. Es una de las primeras banderas rojas al leer el track record de un fondo.",
+      "distractores": {
+        "1": "La suavidad de la curva no es evidencia de habilidad; suele ser evidencia de cómo se valora.",
+        "2": "Podría tener más apalancamiento y seguir mostrando volatilidad baja.",
+        "3": "La diversificación reduce riesgo, pero no explica una volatilidad artificialmente suave."
+      }
+    },
+    {
+      "id": "03-q12",
+      "concepto": "correlacion en crisis",
+      "enunciado": "¿Por qué la diversificación falla precisamente en los episodios de estrés?",
+      "opciones": [
+        "Porque las correlaciones suben hacia 1 en el estrés",
+        "Porque los inversores entran en pánico sin razón",
+        "Porque los mercados cierran",
+        "Porque las correlaciones históricas están mal calculadas"
+      ],
+      "correcta": 0,
+      "explicacion": "Las correlaciones se estiman sobre periodos normales, que son la mayoría de los datos. En el estrés el factor común deja de ser el fundamental de cada activo y pasa a ser quién lo tiene. La diversificación funciona todos los días salvo el día que la necesitas.",
+      "distractores": {
+        "1": "Etiqueta psicológica que no describe el mecanismo de venta forzada.",
+        "2": "Los mercados siguen abiertos en la inmensa mayoría de los episodios.",
+        "3": "Están bien calculadas para el periodo que cubren; el problema es que ese periodo no incluye el estrés."
+      }
+    },
+    {
+      "id": "03-q13",
+      "concepto": "riesgo de secuencia",
+      "enunciado": "Dos carteras tienen el mismo retorno medio y los mismos años, pero en orden distinto. ¿Cuándo importa ese orden?",
+      "opciones": [
+        "Nunca: la multiplicación es conmutativa y el orden da igual",
+        "Cuando hay aportaciones o retiradas periódicas de dinero",
+        "Solo importa si la cartera utiliza apalancamiento",
+        "Solo importa en carteras compuestas por renta fija"
+      ],
+      "correcta": 1,
+      "explicacion": "Con la cartera quieta solo importa la media geométrica. En cuanto aportas o retiras, sufrir las caídas al principio deja un capital reducido que ya no puede recuperarse en los años buenos posteriores.",
+      "distractores": {
+        "0": "Cierto solo sin flujos de entrada o salida, que es un caso poco realista.",
+        "2": "El apalancamiento agrava el efecto pero no es la condición que lo genera.",
+        "3": "Aplica a cualquier clase de activo."
+      }
+    },
+    {
+      "id": "03-q14",
+      "concepto": "coberturas",
+      "enunciado": "¿Cuál es el problema principal de cubrirse permanentemente comprando protección?",
+      "opciones": [
+        "Que es difícil de contratar",
+        "Que no funciona en las crisis reales",
+        "Que cuesta rentabilidad todos los años",
+        "Que exige mucho capital inicial"
+      ],
+      "correcta": 2,
+      "explicacion": "Es como el seguro del coche: pagas todos los años y la mayoría no cobras. En una cartera ese coste continuo erosiona el retorno compuesto igual que una comisión. Por eso la cobertura sistemática es una decisión mucho menos obvia de lo que parece.",
+      "distractores": {
+        "0": "Es accesible en cualquier bróker con opciones.",
+        "1": "Funciona: el problema es lo que cuesta mientras tanto.",
+        "3": "El coste es recurrente, no una barrera de entrada."
+      }
+    },
+    {
+      "id": "03-q15",
+      "concepto": "pérdida permanente",
+      "enunciado": "De los cuatro caminos hacia la pérdida permanente, ¿cuál depende exclusivamente de ti y puedes cerrar por completo?",
+      "opciones": [
+        "El deterioro irreversible del negocio",
+        "Haber pagado demasiado",
+        "Que te obliguen a vender antes de la recuperación",
+        "Que la estructura de capital te barra"
+      ],
+      "correcta": 2,
+      "explicacion": "Las tres primeras dependen del activo y del precio. La cuarta depende solo de tu apalancamiento, del tamaño de tu posición y de tu horizonte real. Es la más frecuente entre particulares con buen criterio, y la única que se cierra con una decisión enteramente tuya: el tamaño.",
+      "distractores": {
+        "0": "Depende del negocio; se mitiga con análisis, no se elimina.",
+        "1": "Depende del precio pagado; se mitiga con valoración.",
+        "3": "Depende de la deuda de la empresa; se mitiga mirando el balance."
       }
     }
   ]

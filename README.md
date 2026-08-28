@@ -26,9 +26,9 @@ No hay que instalar nada. Solo Python (stdlib) y un navegador.
 
 | Día | Qué |
 |---|---|
-| Lun–Mié | Teoría densa (50 min de lectura) + test de 10 preguntas |
+| Lun–Mié | Teoría densa (35-45 min de lectura) + test de 15 preguntas |
 | Jue | Laboratorio: datos reales, simuladores, autopsias |
-| Vie | Examen semanal: 40 preguntas + 3 casos abiertos |
+| Vie | Examen semanal: 50 preguntas de un pool de 85 + 3 casos abiertos |
 
 **Corte 80%.** Suspender un test diario obliga a repetir la sesión. Suspender el
 examen semanal borra el progreso de esa semana entera y hay que repetirla; el
@@ -80,8 +80,10 @@ data/curso.db                    se crea sola al arrancar
 
 1. `content/sesiones/NN-slug.md` con frontmatter (`id`, `semana`, `dia`, `tipo`,
    `titulo`, `glosario`, `requisitos`). El `id` va **entrecomillado**: `"07"`.
-2. `content/examenes/test-NN.json` con 10 preguntas. Cada una necesita
-   `explicacion` y `distractores` (por qué tienta cada opción falsa).
+2. `content/examenes/test-NN.json` con 15 preguntas. Cada una necesita
+   `explicacion` y `distractores` (por qué tienta cada opción falsa). Vigilar
+   los dos sesgos que documenta `CLAUDE.md`: posición de la correcta y
+   longitud de las opciones.
 3. Nada más. El índice, el glosario y el gate recorren el contenido solos.
 
 Los simuladores se declaran en el markdown con un bloque cercado

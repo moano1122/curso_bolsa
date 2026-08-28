@@ -4,13 +4,18 @@
   "tipo": "diario",
   "titulo": "Test diario · El kit numérico",
   "corte": 0.8,
-  "n_preguntas": 10,
+  "n_preguntas": 15,
   "preguntas": [
     {
       "id": "04-q1",
       "concepto": "media geométrica",
       "enunciado": "Un activo tiene retorno medio aritmético del 15% anual y volatilidad del 45%. ¿Cuál es su retorno compuesto aproximado?",
-      "opciones": ["15%", "10,5%", "4,9%", "0%"],
+      "opciones": [
+        "15%",
+        "10,5%",
+        "4,9%",
+        "0%"
+      ],
       "correcta": 2,
       "explicacion": "0,15 − (0,45²/2) = 0,15 − 0,101 = 4,9%. La volatilidad se ha comido dos tercios del retorno medio. Ese término σ²/2 es el lastre de volatilidad.",
       "distractores": {
@@ -23,12 +28,17 @@
       "id": "04-q2",
       "concepto": "comisiones compuestas",
       "enunciado": "100.000 € al 8% durante 30 años frente a los mismos al 6,5% (una comisión del 1,5%). ¿Qué porcentaje del beneficio se lleva la comisión?",
-      "opciones": ["1,5%", "Alrededor del 15%", "Alrededor del 38%", "Alrededor del 60%"],
-      "correcta": 2,
+      "opciones": [
+        "Alrededor del 38%",
+        "1,5%",
+        "Alrededor del 15%",
+        "Alrededor del 60%"
+      ],
+      "correcta": 0,
       "explicacion": "1.006.266 € frente a 661.437 €. Beneficios de 906.266 € frente a 561.437 €. La comisión se lleva 344.829 €, un 38% del beneficio. Se compone igual que el capital, en dirección contraria.",
       "distractores": {
-        "0": "Confunde la comisión anual con su efecto acumulado. Es exactamente el error que la industria explota al anunciar comisiones.",
-        "1": "Subestima el efecto de la composición a 30 años.",
+        "1": "Confunde la comisión anual con su efecto acumulado. Es exactamente el error que la industria explota al anunciar comisiones.",
+        "2": "Subestima el efecto de la composición a 30 años.",
         "3": "Sobreestima."
       }
     },
@@ -36,12 +46,17 @@
       "id": "04-q3",
       "concepto": "probabilidad implícita",
       "enunciado": "Un mercado cotiza tres resultados a cuotas 2,10 / 3,40 / 5,00. ¿Cuál es el overround?",
-      "opciones": ["0%, las probabilidades siempre suman 100%", "3,4%", "7,0%", "10,7%"],
-      "correcta": 2,
+      "opciones": [
+        "7,0%",
+        "0%, las probabilidades siempre suman 100%",
+        "3,4%",
+        "10,7%"
+      ],
+      "correcta": 0,
       "explicacion": "1/2,10 + 1/3,40 + 1/5,00 = 1,0703. El exceso sobre 1 es el 7,0%: el margen de la casa. Es el coste de participar antes de acertar nada.",
       "distractores": {
-        "0": "Las probabilidades reales suman 100%; las implícitas de un mercado real no, y esa diferencia es el negocio del intermediario.",
-        "1": "Número arbitrario.",
+        "1": "Las probabilidades reales suman 100%; las implícitas de un mercado real no, y esa diferencia es el negocio del intermediario.",
+        "2": "Número arbitrario.",
         "3": "Confunde el total (1,0703) con el exceso (0,0703)."
       }
     },
@@ -49,25 +64,35 @@
       "id": "04-q4",
       "concepto": "valor esperado insuficiente",
       "enunciado": "Una operación con 40% de ganar 300 € y 60% de perder 150 € tiene EV de +30 €. ¿Por qué eso no basta para decidir repetirla?",
-      "opciones": ["Porque el EV podría estar mal calculado", "Porque si el tamaño de cada operación es grande respecto al capital, un EV positivo puede llevar a la ruina", "Porque hay que descontar comisiones", "Porque 40% de acierto es demasiado bajo"],
-      "correcta": 1,
+      "opciones": [
+        "Porque el valor esperado podría estar mal calculado",
+        "Porque falta descontar comisiones y coste de ejecución",
+        "Porque un 40% de acierto es una tasa demasiado baja",
+        "Porque con tamaño grande, un EV positivo puede llevar a la ruina"
+      ],
+      "correcta": 3,
       "explicacion": "Con el 30% del capital por operación, cuatro pérdidas seguidas (probabilidad 13%) dejan el capital en 0,7⁴ = 24%. El EV es condición necesaria y no suficiente: el tamaño decide si un juego favorable te enriquece o te arruina.",
       "distractores": {
         "0": "Preocupación válida y distinta de la que plantea el ejercicio.",
-        "2": "Relevante en la práctica pero de segundo orden frente al problema de tamaño.",
-        "3": "El porcentaje de acierto no determina la calidad de una apuesta; lo hace la combinación con el tamaño de los pagos."
+        "1": "Relevante en la práctica pero de segundo orden frente al problema de tamaño.",
+        "2": "El porcentaje de acierto no determina la calidad de una apuesta; lo hace la combinación con el tamaño de los pagos."
       }
     },
     {
       "id": "04-q5",
       "concepto": "tasa base",
       "enunciado": "El 2% de las empresas tiene irregularidades contables. Un test detecta el 80% de los fraudes y marca falsamente al 10% de las honestas. Da positivo. ¿Probabilidad de fraude real?",
-      "opciones": ["80%", "Alrededor del 50%", "Alrededor del 14%", "2%"],
-      "correcta": 2,
+      "opciones": [
+        "Alrededor del 80%",
+        "Alrededor del 14%",
+        "Alrededor del 50%",
+        "Alrededor del 2%"
+      ],
+      "correcta": 1,
       "explicacion": "De 1.000 empresas: 16 positivos verdaderos y 98 falsos positivos. 16/114 = 14%. Cuando el evento base es raro, los falsos positivos dominan aunque el test parezca bueno.",
       "distractores": {
         "0": "Confunde la sensibilidad del test con la probabilidad posterior. Es el error bayesiano clásico y el más caro al evaluar señales.",
-        "1": "Intuición de 'más o menos la mitad' sin cálculo.",
+        "2": "Intuición de 'más o menos la mitad' sin cálculo.",
         "3": "Devuelve el prior sin actualizar. El test sí aporta información: pasa del 2% al 14%."
       }
     },
@@ -75,12 +100,17 @@
       "id": "04-q6",
       "concepto": "señales y falsos positivos",
       "enunciado": "Alguien te presenta una señal que 'acierta el 80% de los techos de mercado'. ¿Qué falta para poder evaluarla?",
-      "opciones": ["El periodo analizado", "Su tasa de falsos positivos y la frecuencia base de los techos", "El rendimiento anualizado", "La volatilidad de la estrategia"],
-      "correcta": 1,
+      "opciones": [
+        "El periodo analizado",
+        "El rendimiento anualizado",
+        "Su tasa de falsos positivos",
+        "La volatilidad de la estrategia"
+      ],
+      "correcta": 2,
       "explicacion": "Sin la tasa de falsos positivos y la frecuencia del evento, la sensibilidad no dice nada. Si los techos ocurren el 2% de los días, una señal con 10% de falsos positivos generará seis veces más alarmas falsas que aciertos.",
       "distractores": {
         "0": "Información útil pero no la que hace falta para el cálculo bayesiano.",
-        "2": "Es un resultado, no un diagnóstico de la señal.",
+        "1": "Es un resultado, no un diagnóstico de la señal.",
         "3": "Relevante para dimensionar, no para evaluar la señal."
       }
     },
@@ -88,12 +118,17 @@
       "id": "04-q7",
       "concepto": "apalancamiento y drag",
       "enunciado": "Índice con 12% de retorno medio y 20% de volatilidad. Un ETF apalancado 3× tiene un retorno compuesto aproximado de:",
-      "opciones": ["36%", "30%", "18%", "10%"],
-      "correcta": 2,
+      "opciones": [
+        "18%",
+        "36%",
+        "30%",
+        "10%"
+      ],
+      "correcta": 0,
       "explicacion": "Retorno medio 36%, volatilidad 60%. 0,36 − (0,60²/2) = 18%. Triplicas la exposición y no llegas a duplicar el retorno compuesto del índice sin apalancar (10%), mientras el drawdown se dispara. Y esto asume coste cero.",
       "distractores": {
-        "0": "Es el retorno medio, no el compuesto. Confundirlos es el error central del producto.",
-        "1": "Número intermedio plausible sin cálculo.",
+        "1": "Es el retorno medio, no el compuesto. Confundirlos es el error central del producto.",
+        "2": "Número intermedio plausible sin cálculo.",
         "3": "Es el retorno compuesto del índice sin apalancar."
       }
     },
@@ -101,39 +136,144 @@
       "id": "04-q8",
       "concepto": "media del conjunto vs temporal",
       "enunciado": "En el simulador del juego no ergódico, la media de todas las trayectorias es muy positiva pero casi todas acaban cerca de cero. ¿Por qué?",
-      "opciones": ["El simulador tiene un error", "Unas pocas trayectorias con resultados enormes arrastran la media aritmética del conjunto", "La mediana está mal calculada", "El valor esperado del juego es negativo"],
-      "correcta": 1,
+      "opciones": [
+        "El simulador tiene un error",
+        "La mediana está mal calculada",
+        "El valor esperado del juego es negativo",
+        "Unas pocas trayectorias enormes arrastran la media"
+      ],
+      "correcta": 3,
       "explicacion": "La media de conjunto está dominada por la cola derecha. La mediana describe la trayectoria típica. Ese abismo entre media y mediana es la no ergodicidad hecha visible, y es la razón de mirar la mediana cuando decides por ti mismo.",
       "distractores": {
         "0": "El comportamiento es correcto y es el objetivo del ejercicio.",
-        "2": "La mediana es precisamente el dato fiable aquí.",
-        "3": "El EV es +5% por tirada. Que sea positivo y aun así ruines es el punto entero."
+        "1": "La mediana es precisamente el dato fiable aquí.",
+        "2": "El EV es +5% por tirada. Que sea positivo y aun así ruines es el punto entero."
       }
     },
     {
       "id": "04-q9",
       "concepto": "cuota justa vs rentable",
       "enunciado": "Estimas un 30% de probabilidad para un escenario. ¿A partir de qué cuota decimal tiene sentido apostar?",
-      "opciones": ["A partir de 1,30", "A partir de 3,00", "A partir de 3,33, y con margen adicional por encima", "A cualquier cuota, si la probabilidad es correcta"],
-      "correcta": 2,
+      "opciones": [
+        "A partir de 1,30",
+        "A partir de 3,00",
+        "A cualquier cuota, si la probabilidad es correcta",
+        "A partir de 3,33, con margen adicional"
+      ],
+      "correcta": 3,
       "explicacion": "1/0,30 = 3,33 es la cuota justa: EV cero. Necesitas margen por encima para cubrir el error de tu propia estimación, que es la incertidumbre que no puedes eliminar.",
       "distractores": {
         "0": "Confunde probabilidad con cuota.",
         "1": "Cuota por debajo de la justa: EV negativo.",
-        "3": "Ignora que tu estimación de probabilidad tiene error, que es la lección de Knight aplicada."
+        "2": "Ignora que tu estimación de probabilidad tiene error, que es la lección de Knight aplicada."
       }
     },
     {
       "id": "04-q10",
       "concepto": "límites de los simuladores",
       "enunciado": "¿Por qué los simuladores de esta sesión subestiman el riesgo real?",
-      "opciones": ["Porque usan pocas trayectorias", "Porque usan distribuciones sin colas gordas, mientras los retornos reales sí las tienen", "Porque no incluyen comisiones", "Porque asumen rebalanceo diario"],
+      "opciones": [
+        "Porque usan pocas trayectorias",
+        "Porque usan distribuciones sin colas gordas",
+        "Porque no incluyen comisiones",
+        "Porque asumen rebalanceo diario"
+      ],
       "correcta": 1,
       "explicacion": "Una moneda de dos resultados y retornos normales generan menos eventos extremos que la realidad. Sirven para enseñar el mecanismo, no para dimensionar tu riesgo.",
       "distractores": {
         "0": "Se puede aumentar el número de trayectorias sin corregir el problema de fondo.",
         "2": "Cierto en algunos casos y de segundo orden.",
         "3": "Es un supuesto del ejercicio del ETF apalancado, no la limitación general."
+      }
+    },
+    {
+      "id": "04-q11",
+      "concepto": "R multiplos",
+      "enunciado": "Aciertas el 70% de las veces. Tus ganadoras promedian +0,5R y tus perdedoras −1,5R. ¿Cuál es tu expectativa por operación?",
+      "opciones": [
+        "+0,35R",
+        "+0,2R",
+        "−0,1R",
+        "No se puede calcular sin saber el capital"
+      ],
+      "correcta": 2,
+      "explicacion": "(0,70 × 0,5) − (0,30 × 1,5) = 0,35 − 0,45 = −0,1R. Negativa, con un 70% de aciertos. La tasa de acierto por sí sola no dice nada sobre si un sistema gana dinero.",
+      "distractores": {
+        "0": "Solo calcula la parte ganadora y olvida restar las pérdidas.",
+        "1": "Número plausible sin hacer la resta.",
+        "3": "El sistema R existe precisamente para poder calcular esto sin conocer el capital."
+      }
+    },
+    {
+      "id": "04-q12",
+      "concepto": "psicologia del sistema",
+      "enunciado": "Un sistema acierta el 40% con ganadoras de +2,5R y perdedoras de −1R. ¿Por qué es difícil de operar pese a su expectativa positiva?",
+      "opciones": [
+        "Porque requiere mucho capital",
+        "Porque pasarás la mayor parte del tiempo perdiendo",
+        "Porque las comisiones se lo comen",
+        "Porque necesita apalancamiento"
+      ],
+      "correcta": 1,
+      "explicacion": "Su expectativa es +0,4R por operación y aun así la mayoría de la gente lo abandona durante una racha. Un sistema que no puedes sostener emocionalmente tiene una expectativa real de cero, porque lo dejarás antes de que la ventaja se materialice.",
+      "distractores": {
+        "0": "El capital necesario no depende de la tasa de acierto.",
+        "2": "Las comisiones importan y no son la dificultad principal aquí.",
+        "3": "No requiere apalancamiento en absoluto."
+      }
+    },
+    {
+      "id": "04-q13",
+      "concepto": "correlacion",
+      "enunciado": "Dos posiciones del mismo tamaño, cada una con 20% de volatilidad, correlacionadas al 0,7. ¿Cuánta diversificación has conseguido?",
+      "opciones": [
+        "Mucha: la volatilidad de la cartera baja a la mitad",
+        "Muy poca: la volatilidad de la cartera queda en torno al 18,4%",
+        "Ninguna en absoluto: se comportan como una sola posición",
+        "Depende del sector al que pertenezca cada una"
+      ],
+      "correcta": 1,
+      "explicacion": "El beneficio de diversificar se desploma en cuanto la correlación supera 0,5. Entre 0,7 y 1,0 apenas hay diferencia. Y en las crisis las correlaciones tienden precisamente a ese tramo.",
+      "distractores": {
+        "0": "Bajar a la mitad requeriría correlación negativa fuerte.",
+        "2": "Algo se consigue: de 20% a 18,4%. Poco, pero no nulo.",
+        "3": "El sector influye en la correlación, pero el dato ya está dado en el enunciado."
+      }
+    },
+    {
+      "id": "04-q14",
+      "concepto": "aportaciones periodicas",
+      "enunciado": "Ana aporta 500 €/mes durante 30 años. Beto no aporta nada 10 años y luego 1.000 €/mes durante 20. Beto aporta 240.000 € y Ana 180.000 €. ¿Quién acaba con más?",
+      "opciones": [
+        "Beto, porque acaba aportando 60.000 € más que Ana",
+        "Terminan prácticamente igual, con diferencias menores",
+        "Depende de la rentabilidad: no se puede saber de antemano",
+        "Ana, porque sus primeros euros tuvieron más años para componer"
+      ],
+      "correcta": 3,
+      "explicacion": "Ana termina con unos 610.000 € frente a los 520.000 € de Beto, aportando un 25% menos de dinero. En la fórmula del capital compuesto la aportación es un factor pero el tiempo es el exponente.",
+      "distractores": {
+        "0": "Aportar más dinero no compensa haber perdido diez años de composición.",
+        "1": "La diferencia ronda los 90.000 €, nada despreciable.",
+        "2": "El resultado cualitativo se mantiene para cualquier rentabilidad positiva razonable."
+      }
+    },
+    {
+      "id": "04-q15",
+      "concepto": "break-even de una opcion",
+      "enunciado": "Acción a 100 €. Compras el derecho a comprarla a 110 € pagando 4 € de prima. La acción acaba en 112 €. ¿Qué ha pasado?",
+      "opciones": [
+        "Pierdes 2 €: no llegaste al break-even de 114 €",
+        "Ganas 2 €, porque el precio ha superado el strike",
+        "Pierdes los 4 € de la prima íntegros",
+        "Ganas 12 €, la diferencia sobre el precio de entrada"
+      ],
+      "correcta": 0,
+      "explicacion": "El derecho vale 2 € (112 − 110), pero pagaste 4 €. Tu break-even era 114 €. Esta es la razón estructural de que la mayoría de compradores de opciones pierda: no hace falta equivocarse de dirección, basta con no acertar lo suficiente.",
+      "distractores": {
+        "1": "Olvida descontar la prima pagada, que es el error más común al empezar con opciones.",
+        "2": "Perderías los 4 € íntegros solo por debajo de 110; a 112 recuperas 2.",
+        "3": "Confunde el movimiento de la acción con el resultado de la opción."
       }
     }
   ]

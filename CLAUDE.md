@@ -36,6 +36,17 @@ Duración: 3 meses. 5 sesiones semanales de 1 hora. 60 sesiones.
   opciones vienen de fuentes reales y citadas. Si no hay dato, se dice.
 - **El gate es real.** Sin aprobar el examen, la siguiente sesión queda
   bloqueada en la app. No hay botón de saltar.
+- **El banco de preguntas no puede tener pistas gratis.** Dos sesgos que
+  aparecen solos si no se vigilan y que permiten aprobar sin saber nada:
+  - **Posición.** La respuesta correcta debe repartirse a partes iguales entre
+    las cuatro posiciones. Comprobar el reparto tras añadir preguntas.
+  - **Longitud.** Si la correcta lleva la justificación incorporada y los
+    distractores son escuetos, la longitud la delata. La justificación va en
+    `explicacion`, no en la opción. Objetivo: ratio medio de longitud
+    correcta/distractores por debajo de 1,20.
+
+  Prueba de humo antes de dar por buena una tanda: responder eligiendo siempre
+  la opción más larga debe suspender con holgura.
 
 ## Arquitectura
 

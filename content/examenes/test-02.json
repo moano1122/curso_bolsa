@@ -4,31 +4,41 @@
   "tipo": "diario",
   "titulo": "Test diario · El tipo de interés como gravedad",
   "corte": 0.8,
-  "n_preguntas": 10,
+  "n_preguntas": 15,
   "preguntas": [
     {
       "id": "02-q1",
       "concepto": "duración",
       "enunciado": "La tasa de descuento sube del 4% al 5%. ¿Cuál de estos flujos pierde más valor presente?",
-      "opciones": ["100 € dentro de 1 año", "100 € dentro de 10 años", "100 € dentro de 30 años", "Los tres pierden lo mismo, porque la subida es la misma"],
-      "correcta": 2,
+      "opciones": [
+        "100 € dentro de 1 año",
+        "100 € dentro de 10 años",
+        "Los tres pierden lo mismo, porque la subida es la misma",
+        "100 € dentro de 30 años"
+      ],
+      "correcta": 3,
       "explicacion": "El de 1 año pierde un 0,9%, el de 10 años un 9,1% y el de 30 años un 24,9%. Cuanto más lejos está el dinero, más veces se aplica el divisor y más sensible es a la tasa. Eso es duración.",
       "distractores": {
         "0": "Invierte la relación. Tienta si se piensa que lo inmediato es lo más expuesto.",
         "1": "Correcto en dirección pero no es el máximo de los tres.",
-        "3": "El error de asumir que un cambio uniforme en la tasa tiene efecto uniforme. Es justo lo que la sesión desmiente."
+        "2": "El error de asumir que un cambio uniforme en la tasa tiene efecto uniforme. Es justo lo que la sesión desmiente."
       }
     },
     {
       "id": "02-q2",
       "concepto": "growth vs value",
       "enunciado": "¿Por qué las acciones de crecimiento cayeron más que las de valor en 2022, sin que hubiera recesión?",
-      "opciones": ["Porque sus beneficios se desplomaron", "Porque tienen mayor duración de equity: su valor está en flujos más lejanos, más sensibles a la tasa", "Porque los inversores rotaron por moda", "Porque tenían más deuda"],
-      "correcta": 1,
+      "opciones": [
+        "Porque sus beneficios se desplomaron",
+        "Porque los inversores rotaron por moda",
+        "Porque tienen mayor duración de equity",
+        "Porque tenían más deuda"
+      ],
+      "correcta": 2,
       "explicacion": "El bono a 10 años pasó de ~1,5% a ~3,9%. No cambió el numerador, cambió el denominador, y golpeó proporcionalmente más a lo que tenía el dinero más lejos. Growth y value son, en buena medida, dos posiciones en la curva de duración.",
       "distractores": {
         "0": "No hubo colapso de beneficios en 2022; fue una repreciación, no un deterioro operativo.",
-        "2": "Describe el fenómeno superficialmente sin explicar el mecanismo. La rotación fue el efecto, no la causa.",
+        "1": "Describe el fenómeno superficialmente sin explicar el mecanismo. La rotación fue el efecto, no la causa.",
         "3": "Muchas tecnológicas de crecimiento tienen caja neta, no deuda. Es la respuesta que tienta si se confunde sensibilidad a tipos con apalancamiento financiero."
       }
     },
@@ -36,25 +46,35 @@
       "id": "02-q3",
       "concepto": "modelo de Gordon",
       "enunciado": "Un flujo de 10 crece al 6% y se descuenta al 8%. Si la estimación de crecimiento pasa de 6% a 7%, ¿qué le ocurre al valor?",
-      "opciones": ["Sube aproximadamente un 17%, en proporción al cambio de g", "Sube un 12,5%", "Se duplica", "Sube un 1%, la diferencia entre 6 y 7"],
-      "correcta": 2,
+      "opciones": [
+        "Sube aproximadamente un 17%, en proporción al cambio de g",
+        "Sube un 12,5%",
+        "Sube un 1%, la diferencia entre 6 y 7",
+        "Se duplica"
+      ],
+      "correcta": 3,
       "explicacion": "10/(0,08−0,06) = 500. 10/(0,08−0,07) = 1.000. El denominador es una resta pequeña, y reducirla a la mitad duplica el resultado. La sensibilidad es no lineal y explota cuando r y g se acercan.",
       "distractores": {
         "0": "Aplica intuición proporcional a un cociente con resta en el denominador. Es el error más común con Gordon.",
         "1": "Número plausible sin cálculo.",
-        "3": "Confunde el cambio del input con el cambio del output."
+        "2": "Confunde el cambio del input con el cambio del output."
       }
     },
     {
       "id": "02-q4",
       "concepto": "Fisher",
       "enunciado": "Un bono paga un 5% nominal y la inflación esperada es del 6%. Tu tipo real aproximado es:",
-      "opciones": ["11%", "5%", "−1%", "6%"],
-      "correcta": 2,
+      "opciones": [
+        "11%",
+        "−1%",
+        "5%",
+        "6%"
+      ],
+      "correcta": 1,
       "explicacion": "real ≈ nominal − inflación esperada = 5% − 6% = −1%. En poder adquisitivo estás pagando por prestar dinero. Ese entorno empuja a todo el mundo a asumir riesgo, no porque el riesgo mejore sino porque la alternativa es una pérdida segura.",
       "distractores": {
         "0": "Suma en lugar de restar.",
-        "1": "Confunde nominal con real, que es exactamente el error que la sesión ataca.",
+        "2": "Confunde nominal con real, que es exactamente el error que la sesión ataca.",
         "3": "Da la inflación como respuesta."
       }
     },
@@ -62,12 +82,17 @@
       "id": "02-q5",
       "concepto": "descuento",
       "enunciado": "¿Cuánto vale hoy un flujo de 121 € que cobrarás dentro de 2 años, descontado al 10%?",
-      "opciones": ["100 €", "110 €", "99 €", "121 €"],
-      "correcta": 0,
+      "opciones": [
+        "110 €",
+        "99 €",
+        "100 €",
+        "121 €"
+      ],
+      "correcta": 2,
       "explicacion": "121 / 1,10² = 121 / 1,21 = 100 €. Descontar es capitalizar al revés.",
       "distractores": {
-        "1": "Descuenta un solo año en lugar de dos.",
-        "2": "Resta un 10% en lugar de dividir. Restar porcentajes y dividir por (1+r)ⁿ no es lo mismo.",
+        "0": "Descuenta un solo año en lugar de dos.",
+        "1": "Resta un 10% en lugar de dividir. Restar porcentajes y dividir por (1+r)ⁿ no es lo mismo.",
         "3": "Ignora el descuento, que es el error conceptual de fondo."
       }
     },
@@ -75,12 +100,17 @@
       "id": "02-q6",
       "concepto": "punto básico",
       "enunciado": "Un activo con flujo 10, tasa 8% y crecimiento 5%. La tasa sube 25 puntos básicos. ¿Cuánto cae el valor?",
-      "opciones": ["0,25%", "Alrededor del 3%", "Alrededor del 7,7%", "Alrededor del 25%"],
-      "correcta": 2,
+      "opciones": [
+        "0,25%",
+        "Alrededor del 7,7%",
+        "Alrededor del 3%",
+        "Alrededor del 25%"
+      ],
+      "correcta": 1,
       "explicacion": "De 10/0,03 = 333 a 10/0,0325 = 308. Un −7,7% por un cuarto de punto. Ese es el sentido literal de la gravedad: un cambio minúsculo en la tasa reprecia todo simultáneamente.",
       "distractores": {
         "0": "Confunde el tamaño del cambio en el input con el cambio en el output. El error más frecuente al leer titulares de bancos centrales.",
-        "1": "Plausible sin calcular.",
+        "2": "Plausible sin calcular.",
         "3": "Confunde 25 puntos básicos con 25%."
       }
     },
@@ -88,11 +118,16 @@
       "id": "02-q7",
       "concepto": "perpetuidad",
       "enunciado": "En el modelo de Gordon, ¿qué está mal si tu crecimiento a perpetuidad es del 7% y el crecimiento nominal esperado de la economía es del 4%?",
-      "opciones": ["Nada, hay empresas que crecen más que la economía", "Que el modelo implica que la empresa acabará siendo mayor que la economía entera", "Que la tasa de descuento debería ser mayor", "Que el valor terminal saldrá demasiado bajo"],
-      "correcta": 1,
+      "opciones": [
+        "Que implica que la empresa acabará siendo mayor que la economía",
+        "Nada: hay muchas empresas que crecen más que la economía",
+        "Que la tasa de descuento utilizada debería ser mayor",
+        "Que el valor terminal resultante saldrá demasiado bajo"
+      ],
+      "correcta": 0,
       "explicacion": "A perpetuidad significa para siempre. Cualquier cosa que crezca indefinidamente por encima de la economía acaba siendo el 100% de la economía. Es una regla de higiene: el g terminal no puede superar el crecimiento nominal de largo plazo.",
       "distractores": {
-        "0": "Cierto a plazos finitos, imposible a perpetuidad. La trampa es que la afirmación suena razonable.",
+        "1": "Cierto a plazos finitos, imposible a perpetuidad. La trampa es que la afirmación suena razonable.",
         "2": "Ajustar r para tapar un g imposible es maquillar el síntoma.",
         "3": "Saldría absurdamente alto, no bajo."
       }
@@ -101,7 +136,12 @@
       "id": "02-q8",
       "concepto": "tasa libre de riesgo",
       "enunciado": "¿Por qué se llama 'tasa libre de riesgo' al bono soberano de referencia, y por qué el nombre es discutible?",
-      "opciones": ["Porque nunca pierde valor; el nombre es correcto", "Porque no tiene riesgo de impago relevante, pero sí de inflación y de tipo si vendes antes de vencimiento", "Porque está garantizado por el banco central", "Porque su rentabilidad es fija en términos reales"],
+      "opciones": [
+        "Porque nunca pierde valor; el nombre es correcto",
+        "Porque no tiene riesgo de impago, pero sí de inflación y de tipo",
+        "Porque está garantizado por el banco central",
+        "Porque su rentabilidad es fija en términos reales"
+      ],
       "correcta": 1,
       "explicacion": "Es una convención sobre el riesgo de crédito. No está libre de riesgo de inflación ni de riesgo de mercado. 2022 lo demostró con contundencia.",
       "distractores": {
@@ -114,11 +154,16 @@
       "id": "02-q9",
       "concepto": "numerador vs denominador",
       "enunciado": "El mercado cae un 15%. ¿Cuál es la pregunta analíticamente útil?",
-      "opciones": ["¿Está sobrevendido según los indicadores?", "¿Han caído los flujos esperados o ha subido la tasa de descuento?", "¿Es un buen momento para comprar?", "¿Cuánto ha caído respecto a su media móvil?"],
-      "correcta": 1,
+      "opciones": [
+        "¿Han caído los flujos esperados o ha subido la tasa de descuento?",
+        "¿Está sobrevendido según los indicadores técnicos habituales?",
+        "¿Es este un buen momento para comprar más posición?",
+        "¿Cuánto ha caído respecto a su media móvil de largo plazo?"
+      ],
+      "correcta": 0,
       "explicacion": "Son dos mundos distintos: un problema del negocio o una repreciación. La respuesta cambia por completo qué significa la caída y cuánto tiempo puede durar.",
       "distractores": {
-        "0": "Pregunta legítima en otro marco, pero no distingue causa.",
+        "1": "Pregunta legítima en otro marco, pero no distingue causa.",
         "2": "Es la conclusión que se quiere alcanzar, no el análisis que permite alcanzarla.",
         "3": "Descriptiva, no explicativa."
       }
@@ -127,13 +172,108 @@
       "id": "02-q10",
       "concepto": "límites del modelo",
       "enunciado": "Históricamente ha habido periodos largos en que los tipos y la bolsa subieron a la vez. ¿Cómo se reconcilia con esta sesión?",
-      "opciones": ["Es una anomalía sin explicación", "Depende de por qué suben los tipos: si suben por crecimiento fuerte, el numerador puede crecer más rápido que el denominador", "La relación tipos-bolsa es aleatoria", "Solo ocurre en mercados emergentes"],
-      "correcta": 1,
+      "opciones": [
+        "Es una anomalía sin explicación",
+        "La relación tipos-bolsa es aleatoria",
+        "Depende de por qué suben los tipos",
+        "Solo ocurre en mercados emergentes"
+      ],
+      "correcta": 2,
       "explicacion": "El efecto de esta sesión asume flujos constantes. Si los tipos suben porque la economía acelera, los flujos esperados también suben. Un alza por crecimiento y un alza por inflación tienen efectos opuestos sobre la renta variable.",
       "distractores": {
         "0": "Tiene explicación clara y es importante conocerla para no aplicar el martillo a todo.",
-        "2": "Hay mecanismo, no aleatoriedad.",
+        "1": "Hay mecanismo, no aleatoriedad.",
         "3": "Ocurre en todos los mercados, incluido el estadounidense."
+      }
+    },
+    {
+      "id": "02-q11",
+      "concepto": "regla del 72",
+      "enunciado": "Con una inflación del 6% anual, ¿en cuánto tiempo se reduce a la mitad tu poder adquisitivo?",
+      "opciones": [
+        "12 años",
+        "6 años",
+        "20 años",
+        "50 años"
+      ],
+      "correcta": 0,
+      "explicacion": "Regla del 72: 72/6 = 12 años. Funciona igual para duplicar capital que para reducirlo a la mitad, según el signo del proceso.",
+      "distractores": {
+        "1": "Confunde la tasa con el plazo.",
+        "2": "Corresponde aproximadamente a una inflación del 3,6%.",
+        "3": "Muy por encima; corresponde a inflaciones muy bajas."
+      }
+    },
+    {
+      "id": "02-q12",
+      "concepto": "quien fija los tipos",
+      "enunciado": "Un banco central baja su tipo de intervención y el bono a 10 años SUBE de rentabilidad. ¿Es posible?",
+      "opciones": [
+        "No: es imposible por definición, la curva sigue al tipo oficial",
+        "Solo puede ocurrir en mercados emergentes poco creíbles",
+        "Sí: el mercado puede anticipar más inflación futura",
+        "Solo si hay un error de valoración que se corregirá pronto"
+      ],
+      "correcta": 2,
+      "explicacion": "El banco central fija directamente el tipo a un día. Todo el resto de la curva lo fija el mercado anticipando la trayectoria futura. Quien opera pensando que 'bajan tipos = baja toda la curva' se lleva sorpresas caras.",
+      "distractores": {
+        "0": "Ha ocurrido varias veces y es perfectamente coherente.",
+        "1": "Ocurre también en mercados desarrollados.",
+        "3": "No es un error: es el mercado descontando consecuencias futuras."
+      }
+    },
+    {
+      "id": "02-q13",
+      "concepto": "coste de capital",
+      "enunciado": "Suben los tipos y una empresa anuncia que recorta su plan de inversiones. ¿Es necesariamente mala señal?",
+      "opciones": [
+        "No: hay proyectos que dejan de superar el coste de capital",
+        "Sí: recortar inversión siempre indica problemas en el negocio",
+        "Solo es preocupante si la empresa tiene deuda que refinanciar",
+        "Sí, porque reducirá mecánicamente su crecimiento futuro"
+      ],
+      "correcta": 0,
+      "explicacion": "Lo que tú exiges como rentabilidad es lo que la empresa paga como coste de capital. Si sube el listón, hay proyectos que dejan de superarlo. Distinguir 'recorta porque va mal' de 'recorta porque hace bien sus cuentas' es una habilidad de la sesión 28.",
+      "distractores": {
+        "1": "Absoluto y falso: depende de qué rinden los proyectos frente al nuevo coste de capital.",
+        "2": "El coste de capital sube para todas, tengan deuda o no.",
+        "3": "Crecer con retorno inferior al coste de capital destruye valor: menos crecimiento puede ser mejor."
+      }
+    },
+    {
+      "id": "02-q14",
+      "concepto": "anualidades",
+      "enunciado": "¿Por qué al principio de una hipoteca casi toda la cuota son intereses y casi nada amortiza el principal?",
+      "opciones": [
+        "Porque el banco cobra por adelantado sus beneficios",
+        "Porque hay comisiones de apertura repartidas",
+        "Porque el interés se aplica sobre el saldo pendiente",
+        "Porque el tipo es más alto los primeros años"
+      ],
+      "correcta": 2,
+      "explicacion": "No es un abuso: es aritmética del descuento. La cuota se calcula para que el valor presente de todos los pagos iguale el importe prestado, y el interés siempre se aplica sobre lo que aún debes.",
+      "distractores": {
+        "0": "Interpretación conspirativa de un hecho aritmético.",
+        "1": "Las comisiones de apertura se pagan aparte y no explican el reparto de la cuota.",
+        "3": "En una hipoteca a tipo fijo el tipo es el mismo todos los años."
+      }
+    },
+    {
+      "id": "02-q15",
+      "concepto": "gravedad por clase de activo",
+      "enunciado": "Suben los tipos con fuerza y rapidez. ¿Por qué puede ser un problema para un banco, si en principio los bancos ganan con tipos más altos?",
+      "opciones": [
+        "Porque sus clientes retiran depósitos",
+        "Porque tiene que pagar más impuestos",
+        "Porque no puede prestar a tipos altos",
+        "Porque el valor de los bonos de su balance se hunde"
+      ],
+      "correcta": 3,
+      "explicacion": "El banco gana con la pendiente de la curva, pero mantiene carteras de bonos cuyo valor cae cuando suben los tipos. Es exactamente lo que ocurrió con varias entidades regionales estadounidenses en 2023.",
+      "distractores": {
+        "0": "La retirada de depósitos suele ser la consecuencia, no la causa inicial.",
+        "1": "Irrelevante para el mecanismo.",
+        "2": "Sí puede prestar a tipos altos: ese es precisamente el lado bueno."
       }
     }
   ]

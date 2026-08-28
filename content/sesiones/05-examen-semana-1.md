@@ -4,7 +4,7 @@ semana: 1
 dia: 5
 tipo: examen
 titulo: "Examen semanal 1"
-subtitulo: "De dónde sale el valor · 40 preguntas + 3 casos · Corte 80%"
+subtitulo: "De dónde sale el valor · 50 preguntas + 3 casos · Corte 80%"
 duracion_min: 60
 conceptos:
   - integración semana 1
@@ -15,9 +15,10 @@ requisitos: ["01", "02", "03", "04"]
 
 ## Qué te vas a encontrar
 
-**40 preguntas tipo test.** Veinte son nuevas e integradoras: cruzan conceptos
+**50 preguntas tipo test.** Veinticinco son nuevas e integradoras: cruzan conceptos
 de dos o tres sesiones distintas y no se responden recordando una sola. Las otras
-veinte salen del pool de los tests diarios, priorizando las que aún no has visto.
+veinticinco salen del pool de sesenta preguntas de los tests diarios, priorizando
+las que aún no has visto.
 
 **3 casos abiertos.** Escribes tu respuesta, y después se te muestra la rúbrica
 punto por punto para que te autocorrijas. La rúbrica es exigente a propósito: si
